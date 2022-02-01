@@ -11,6 +11,8 @@
 #include:
 #- template: Security/SAST.gitlab-ci.yml
 
+# From: https://gitlab.com/pages/hugo
+
 # All available Hugo versions are listed here: https://gitlab.com/pages/hugo/container_registry
 image: registry.gitlab.com/pages/hugo:latest
 
@@ -34,3 +36,5 @@ pages:
 
 # IPFS stuff here:
 # https://github.com/ipfs-shipyard/ipfs-dns-deploy
+# or maybe this:
+# http://docs.ipfs.io.ipns.localhost:8080/how-to/work-with-pinning-services/
