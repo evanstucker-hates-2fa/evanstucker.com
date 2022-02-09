@@ -41,12 +41,13 @@ hugificate_website:
 pin_to_ipfs:
   image: ipfs/go-ipfs
   script:
-  - ipfs init
-  - find . -name public
-  - CID=$(ipfs add -Q -r public)
-  - echo "${CID}"
-  - ipfs pin remote service add pinata https://api.pinata.cloud/psa "${PINATA_JWT}"
-  - ipfs pin remote add --service=pinata "${CID}"
+  - ./pin-to-ipfs.sh
+#  - ipfs init
+#  - find . -name public
+#  - CID=$(ipfs add -Q -r public)
+#  - echo "${CID}"
+#  - ipfs pin remote service add pinata https://api.pinata.cloud/psa "${PINATA_JWT}"
+#  - ipfs pin remote add --service=pinata "${CID}"
   artifacts:
     paths:
     - public
