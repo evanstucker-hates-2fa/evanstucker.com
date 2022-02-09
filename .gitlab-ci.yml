@@ -39,8 +39,9 @@ hugificate_website:
 # or maybe this:
 # http://docs.ipfs.io.ipns.localhost:8080/how-to/work-with-pinning-services/
 pin_to_ipfs:
-  image: ipfs/go-ipfs
-  entrypoint: [""]
+  image:
+    name: ipfs/go-ipfs
+    entrypoint: [""]
   script:
 #  - ./pin-to-ipfs.sh
   - ipfs init
