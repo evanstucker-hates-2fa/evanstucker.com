@@ -1,0 +1,11 @@
+---
+title: "Login Xyz"
+date: 2022-02-08T11:26:31-08:00
+categories:
+- tech
+tags:
+- decentralized identity
+- did
+---
+
+I just skimmed https://blog.mycrypto.com/sign-in-with-ethereum-an-alternative-to-centralized-identity-providers. This reminds me partially of what uPort and 3Box are doing. I'm still very interested in a passwordless future where we use our wallets to sign in to things. Looks like this article is about https://login.xyz/, which has an OIDC server here: https://docs.login.xyz/servers/oidc-server.

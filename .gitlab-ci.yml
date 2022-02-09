@@ -25,7 +25,7 @@ test:
   rules:
     - if: $CI_COMMIT_REF_NAME != $CI_DEFAULT_BRANCH
 
-pages:
+hugificate_website:
   script:
   - hugo
   artifacts:
@@ -38,3 +38,19 @@ pages:
 # https://github.com/ipfs-shipyard/ipfs-dns-deploy
 # or maybe this:
 # http://docs.ipfs.io.ipns.localhost:8080/how-to/work-with-pinning-services/
+pin_to_ipfs:
+  image: ipfs/go-ipfs
+  script:
+  - ipfs init
+  - export CID=$(ipfs add -Q -r public)
+  - ipfs pin remote service add pinata https://api.pinata.cloud/psa "${PINATA_JWT}"
+  - ipfs pin remote add --service=pinata "${CID}"
+  artifacts:
+    paths:
+    - public
+  rules:
+    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
+
+# Broken example with Pinana
+# Maybe try this instead: https://docs.pinata.cloud/api-pinning/pin-file#pinning-a-directory-example
+# curl -F file=@public/ -H "Authorization: Bearer ${PINATA_JWT}" -X POST https://api.pinata.cloud/pinning/pinFileToIPFS

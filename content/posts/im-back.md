@@ -1,7 +1,6 @@
 ---
 title: "I'm back..."
 date: 2022-01-21T17:21:49-08:00
-draft: false
 categories:
 - blog
 tags:
