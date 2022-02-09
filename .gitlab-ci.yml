@@ -52,6 +52,7 @@ pin_to_ipfs:
     - public
   rules:
     - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
+  needs: ["hugificate_website"]
 
 # Broken example with Pinana
 # Maybe try this instead: https://docs.pinata.cloud/api-pinning/pin-file#pinning-a-directory-example
