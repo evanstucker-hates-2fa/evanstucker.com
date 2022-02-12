@@ -1,4 +1,13 @@
-baseURL: 'https://ipfs.evanstucker.com/'
+#baseURL: 'https://ipfs.evanstucker.com/'
+baseURL: ''
+
+# Need to use `relativeURLs: true` to fix this error:
+# The resource from blahblah.css was blocked due to MIME type (“text/plain”) mismatch (X-Content-Type-Options: nosniff).
+relativeURLs: true
+
+# Not sure if this is desirable or not, but leaving it here so I remember to read more about it later.
+#uglyurls: true
+
 languageCode: 'en-us'
 title: 'Evans Tucker'
 #theme: 'beautifulhugo'
