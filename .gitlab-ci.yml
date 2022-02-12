@@ -35,15 +35,13 @@ build_car:
   needs: ["hugo"]
 
 # https://docs.web3.storage/reference/http-api/#operation/post-car
+# Split large car files?
+# https://github.com/nftstorage/carbites-cli/
+# - carbites split big.car --size 100MB --strategy simple
 store_car_web3storage:
   image:
     name: curlimages/curl
   script:
-
-  # Split large car files?
-  # https://github.com/nftstorage/carbites-cli/
-  # - carbites split big.car --size 100MB --strategy simple
-
   - curl -F file=@car/output.car -H "Authorization: Bearer ${WEB3STORAGE_TOKEN}" -X POST https://api.web3.storage/car
   artifacts:
     paths:
