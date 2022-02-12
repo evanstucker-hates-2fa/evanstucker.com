@@ -1,17 +1,4 @@
-# You can override the included template(s) by including variable overrides
-# SAST customization: https://docs.gitlab.com/ee/user/application_security/sast/#customizing-the-sast-settings
-# Secret Detection customization: https://docs.gitlab.com/ee/user/application_security/secret_detection/#customizing-settings
-# Dependency Scanning customization: https://docs.gitlab.com/ee/user/application_security/dependency_scanning/#customizing-the-dependency-scanning-settings
-# Note that environment variables can be set in several places
-# See https://docs.gitlab.com/ee/ci/variables/#cicd-variable-precedence
-#stages:
-#- test
-#sast:
-#  stage: test
-#include:
-#- template: Security/SAST.gitlab-ci.yml
-
-# From: https://gitlab.com/pages/hugo
+# https://gitlab.com/pages/hugo/-/blob/master/.gitlab-ci.yml
 
 # All available Hugo versions are listed here: https://gitlab.com/pages/hugo/container_registry
 image: registry.gitlab.com/pages/hugo:latest
@@ -19,13 +6,7 @@ image: registry.gitlab.com/pages/hugo:latest
 variables:
   GIT_SUBMODULE_STRATEGY: recursive
 
-test:
-  script:
-  - hugo
-  rules:
-    - if: $CI_COMMIT_REF_NAME != $CI_DEFAULT_BRANCH
-
-hugificate_website:
+hugo:
   script:
   - hugo
   artifacts:
@@ -34,6 +15,43 @@ hugificate_website:
   rules:
     - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
 
+# https://docs.web3.storage/how-tos/work-with-car-files#go-ipfs
+build_car:
+  image:
+    name: ipfs/go-ipfs
+    entrypoint: [""]
+  script:
+  - ipfs init
+  - CID=$(ipfs add -Q -r public)
+  - echo "${CID}"
+  - mkdir car
+  - ipfs dag export "${CID}" > "car/output.car"
+  artifacts:
+    paths:
+    - public
+    - car
+  rules:
+    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
+  needs: ["hugo"]
+
+# https://docs.web3.storage/reference/http-api/#operation/post-car
+store_car_web3storage:
+  image:
+    name: curlimages/curl
+  script:
+
+  # Split large car files?
+  # https://github.com/nftstorage/carbites-cli/
+  # - carbites split big.car --size 100MB --strategy simple
+
+  - curl -F file=@car/output.car -H "Authorization: Bearer ${WEB3STORAGE_TOKEN}" -X POST https://api.web3.storage/car
+  artifacts:
+    paths:
+    - car
+  rules:
+    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
+  needs: ["build_car"]
+  
 # IPFS stuff here:
 # https://github.com/ipfs-shipyard/ipfs-dns-deploy
 # or maybe this:
@@ -46,7 +64,6 @@ hugificate_website:
 #    entrypoint: [""]
 #  script:
 #  - ipfs init
-#  - find . -name public
 #  - CID=$(ipfs add -Q -r public)
 #  - echo "${CID}"
 #  - ipfs pin remote service add pinata https://api.pinata.cloud/psa "${PINATA_JWT}"
@@ -56,7 +73,7 @@ hugificate_website:
 #    - public
 #  rules:
 #    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
-#  needs: ["hugificate_website"]
+#  needs: ["hugo"]
 
 # Broken example with Pinana
 # Maybe try this instead: https://docs.pinata.cloud/api-pinning/pin-file#pinning-a-directory-example
