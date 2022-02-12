@@ -14,44 +14,6 @@ hugo:
     - public
   rules:
     - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
-
-# https://docs.web3.storage/how-tos/work-with-car-files#go-ipfs
-build_car:
-  image:
-    name: ipfs/go-ipfs
-    entrypoint: [""]
-  script:
-  - ipfs init
-  - CID=$(ipfs add -Q -r public)
-  - echo "${CID}"
-  - mkdir car
-  - ipfs dag export "${CID}" > "car/output.car"
-  artifacts:
-    paths:
-    - public
-    - car
-  rules:
-    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
-  needs: ["hugo"]
-
-# https://docs.web3.storage/reference/http-api/#operation/post-car
-store_car_web3storage:
-  image:
-    name: curlimages/curl
-  script:
-
-  # Split large car files?
-  # https://github.com/nftstorage/carbites-cli/
-  # - carbites split big.car --size 100MB --strategy simple
-
-  - ls -la car/output.car
-  - "curl -d @car/output.car -H \"Authorization: Bearer ${WEB3STORAGE_TOKEN}\" -X POST https://api.web3.storage/car"
-  artifacts:
-    paths:
-    - car
-  rules:
-    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
-  needs: ["build_car"]
   
 # IPFS stuff here:
 # https://github.com/ipfs-shipyard/ipfs-dns-deploy
@@ -79,3 +41,58 @@ store_car_web3storage:
 # Broken example with Pinana
 # Maybe try this instead: https://docs.pinata.cloud/api-pinning/pin-file#pinning-a-directory-example
 # curl -F file=@public/ -H "Authorization: Bearer ${PINATA_JWT}" -X POST https://api.pinata.cloud/pinning/pinFileToIPFS
+
+# Building a car with the go-ipfs Docker image.
+# I feel like I'm making this shit up as I go along. Trying again with NPM (ugh).
+# https://docs.web3.storage/how-tos/work-with-car-files#go-ipfs
+#build_car:
+#  image:
+#    name: ipfs/go-ipfs
+#    entrypoint: [""]
+#  script:
+#  - ipfs init
+#  - CID=$(ipfs add -Q -r public)
+#  - echo "${CID}"
+#  - mkdir car
+#  - ipfs dag export "${CID}" > "car/output.car"
+#  artifacts:
+#    paths:
+#    - public
+#    - car
+#  rules:
+#    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
+#  needs: ["hugo"]
+
+# Storing the CAR with curl. This fails with this error:
+# Invalid CID for CBOR tag 42; expected leading 0x00
+# https://docs.web3.storage/reference/http-api/#operation/post-car
+#store_car_web3storage:
+#  image:
+#    name: curlimages/curl
+#  script:
+#
+#  # Split large car files?
+#  # https://github.com/nftstorage/carbites-cli/
+#  # - carbites split big.car --size 100MB --strategy simple
+#
+#  - "curl -d @car/output.car -H \"Authorization: Bearer ${WEB3STORAGE_TOKEN}\" -X POST https://api.web3.storage/car"
+#  artifacts:
+#    paths:
+#    - car
+#  rules:
+#    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
+#  needs: ["build_car"]
+
+# Store web3.storage
+web3storage_put-files:
+  image:
+    name: node:lts
+  script:
+  - npm install
+  - node put-files.js --token=${WEB3STORAGE_TOKEN} public
+  artifacts:
+    paths:
+    - public
+  rules:
+    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
+  needs: ["hugo"]
