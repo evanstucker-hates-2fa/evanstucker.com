@@ -86,7 +86,7 @@ hugo:
 # Store web3.storage
 web3storage_put-files:
   image:
-    name: node:lts
+    name: node:lts-alpine
   script:
   - npm install
   - node put-files.js --token=${WEB3STORAGE_TOKEN} public/*
