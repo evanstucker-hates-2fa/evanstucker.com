@@ -89,7 +89,7 @@ web3storage_put-files:
     name: node:lts
   script:
   - npm install
-  - node put-files.js --token=${WEB3STORAGE_TOKEN} public
+  - node put-files.js --token=${WEB3STORAGE_TOKEN} public/*
   artifacts:
     paths:
     - public
