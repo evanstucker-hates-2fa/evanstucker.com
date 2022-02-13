@@ -7,3 +7,4 @@ tags:
 - blog
 ---
 I'm back, but I'm doing things my way.
+![image alt text](/my_image.png)
