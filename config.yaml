@@ -1,8 +1,8 @@
 author:
   name: Evans Tucker
 
-#baseURL: 'https://ipfs.evanstucker.com/'
-baseURL: ''
+baseURL: 'https://ipfs.evanstucker.com/'
+#baseURL: ''
 
 # Need to use `relativeURLs: true` to fix this error:
 # The resource from blahblah.css was blocked due to MIME type (“text/plain”) mismatch (X-Content-Type-Options: nosniff).
@@ -48,7 +48,10 @@ menu:
       weight: 20
 params:
   env: production
-  ShowShareButtons: true
+
+  # This doesn't display the correct URLs for some reason.
+  #ShowShareButtons: true
+
 socialIcons:
   - name: "twitter"
     url: "https://twitter.com"
