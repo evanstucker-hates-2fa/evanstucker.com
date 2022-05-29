@@ -1,10 +1,12 @@
 author:
   name: Evans Tucker
 
-# Not using HTTPS, because I haven't figured out certs for IPFS quite yet.
-baseURL: 'http://ipfs.evanstucker.com/'
-
-#baseURL: ''
+# We have to set baseURL to '' so that all links are relative (ie.
+# "/posts/new-mobile-phone-plan" instead of
+# "http://ipfs.evanstucker.com/posts/new-mobile-phone-plan/"), otherwise this
+# site will only work if accessed through ipfs.evanstucker.com, and we don't
+# want that. We want anyone with this static content to be able to view it.
+baseURL: ''
 
 # Need to use `relativeURLs: true` to fix this error:
 # The resource from blahblah.css was blocked due to MIME type (“text/plain”) mismatch (X-Content-Type-Options: nosniff).
@@ -39,20 +41,37 @@ copyright: '[CC0](http://creativecommons.org/publicdomain/zero/1.0/) Evans Tucke
 #copyright: '<p xmlns:dct="http://purl.org/dc/terms/" xmlns:vcard="http://www.w3.org/2001/vcard-rdf/3.0#"><a rel="license"href="http://creativecommons.org/publicdomain/zero/1.0/"><img src="http://i.creativecommons.org/p/zero/1.0/88x31.png" style="border-style: none;" alt="CC0" /></a><br />To the extent possible under law,<a rel="dct:publisher"href="https://evanstucker.com/"><span property="dct:title">Evans Tucker</span></a>has waived all copyright and related or neighboring rights to<span property="dct:title">Evans Tucker</span>.This work is published from:<span property="vcard:Country" datatype="dct:ISO3166"content="US" about="https://evanstucker.com/">United States</span>.</p>'
 timeZone: 'UTC'
 menu:
+
+  # Use `weight: 1`, `weight: 2`, etc. to put the menu in a different order if alphabetical order offends you.
   main:
+
+    # Commenting this out until there's content here.
+    #- identifier: about
+    #  name: about
+    #  url: /about/
+
     - identifier: categories
       name: categories
       url: /categories/
-      weight: 10
-    - identifier: tags
-      name: tags
-      url: /tags/
-      weight: 20
+
+    # I don't think I need this yet.
+    #- identifier: tags
+    #  name: tags
+    #  url: /tags/
+
+    - identifier: wishlists
+      name: wishlists
+      url: /wishlists/
+    
 params:
   env: production
 
   # This doesn't display the correct URLs for some reason.
   #ShowShareButtons: true
+
+# I don't think I care about this, but leaving this here in case I change my mind.
+#permalinks:
+#  posts: /:year/:month/:title/
 
 socialIcons:
   - name: "twitter"
@@ -63,3 +82,6 @@ socialIcons:
     url: "https://reddit.com"
   - name: "facebook"
     url: "https://facebook.com"
+
+# This doesn't seem to do anything.
+#summaryLength: 1000

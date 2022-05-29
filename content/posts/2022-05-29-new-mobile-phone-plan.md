@@ -1,5 +1,7 @@
 ---
 title: "New Mobile Phone Plan"
+categories:
+- tech
 date: 2022-05-29T12:50:46-07:00
 draft: false
 ---
