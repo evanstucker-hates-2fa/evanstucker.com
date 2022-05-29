@@ -1,7 +1,9 @@
 author:
   name: Evans Tucker
 
-baseURL: 'https://ipfs.evanstucker.com/'
+# Not using HTTPS, because I haven't figured out certs for IPFS quite yet.
+baseURL: 'http://ipfs.evanstucker.com/'
+
 #baseURL: ''
 
 # Need to use `relativeURLs: true` to fix this error:
