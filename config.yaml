@@ -53,6 +53,9 @@ menu:
     - identifier: lists
       name: lists
       url: /lists/
+    - identifier: posts
+      name: posts
+      url: /posts/
 
     # I don't think I need this yet.
     #- identifier: tags
