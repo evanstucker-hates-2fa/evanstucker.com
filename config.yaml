@@ -44,24 +44,21 @@ menu:
 
   # Use `weight: 1`, `weight: 2`, etc. to put the menu in a different order if alphabetical order offends you.
   main:
-
-    # Commenting this out until there's content here.
-    #- identifier: about
-    #  name: about
-    #  url: /about/
-
+    - identifier: about
+      name: about
+      url: /about/
     - identifier: categories
       name: categories
       url: /categories/
+    - identifier: lists
+      name: lists
+      url: /lists/
 
     # I don't think I need this yet.
     #- identifier: tags
     #  name: tags
     #  url: /tags/
 
-    - identifier: wishlists
-      name: wishlists
-      url: /wishlists/
     
 params:
   env: production
