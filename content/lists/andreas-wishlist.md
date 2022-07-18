@@ -4,7 +4,6 @@ draft: true
 ---
 Bath bombs
 concert tickets
-Danielle Walker Celebrations cookbook
 disneyland
 foot massager
 
@@ -23,5 +22,5 @@ spa gift certificate
 
 vinyl: depeche mode, the smiths, duran duran
 workout clothes
-dna test 23andme?
 
+See https://docs.google.com/spreadsheets/d/18LUeIORB7jcC4OU7zOIUbrYuK6UtydVfsrmWxF7bERs/edit#gid=0
