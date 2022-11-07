@@ -21,3 +21,10 @@ sudo docker run --rm -it \
   -v $(pwd):/src \
   klakegg/hugo:latest
 ```
+
+## Publish it
+```
+rsync -Prv /home/evans/gitlab.com/evanstucker/hugo-site/public/ 192.168.1.114:/srv/docker/ipfs/ipfs_fuse/
+ssh 192.168.1.114
+sudo docker exec -it ipfs ipfs add -r /ipfs
+```
