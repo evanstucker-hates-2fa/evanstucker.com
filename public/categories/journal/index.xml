@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>journal on Evans Tucker</title>
+    <link>/categories/journal/</link>
+    <description>Recent content in journal on Evans Tucker</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>[CC0](http://creativecommons.org/publicdomain/zero/1.0/) Evans Tucker has waived all copyright and related or neighboring rights.</copyright>
+    <lastBuildDate>Sat, 12 Feb 2022 21:41:19 -0800</lastBuildDate><atom:link href="/categories/journal/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2022-02-12</title>
+      <link>/posts/2022-02-12/</link>
+      <pubDate>Sat, 12 Feb 2022 21:41:19 -0800</pubDate>
+      
+      <guid>/posts/2022-02-12/</guid>
+      <description>I finally worked out the MIME type bug I was having with IPFS. I think I&amp;rsquo;ll relaunch my website soon!
+Rhys got a pretty nice haircut today.
+He and Andrea went to baseball practice, and Corbin and I went on a long bike ride: Cadman park, then down the hill, past the karate dojo, all the way to Costco. We got a berry smoothie and ice cream, then walked back up the hill, and went home.</description>
+    </item>
+    
+    <item>
+      <title>2021-06-28</title>
+      <link>/posts/2021-06-28/</link>
+      <pubDate>Mon, 28 Jun 2021 21:00:00 -0700</pubDate>
+      
+      <guid>/posts/2021-06-28/</guid>
+      <description>I bought Corbin the Kurzgesagt gratitude journal for his birthday and I wanted to practice doing it with him. Here&amp;rsquo;s my entry for today:
+Q: What happened today?
+I had a hanger-induced lunchistetial crisis.
+I went to Woody&amp;rsquo;s at Pacific Beach
+I started reading the US Sailing Basic Cruising book
+Q: Did something good happen to you?
+I had a peaceful lunch at Woody&amp;rsquo;s - beautiful weather, great view right on the beach, cool weird surf music, stoic servers.</description>
+    </item>
+    
+  </channel>
+</rss>

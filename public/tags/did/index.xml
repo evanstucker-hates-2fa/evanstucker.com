@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>did on Evans Tucker</title>
+    <link>/tags/did/</link>
+    <description>Recent content in did on Evans Tucker</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>[CC0](http://creativecommons.org/publicdomain/zero/1.0/) Evans Tucker has waived all copyright and related or neighboring rights.</copyright>
+    <lastBuildDate>Tue, 08 Feb 2022 11:26:31 -0800</lastBuildDate><atom:link href="/tags/did/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Login Xyz</title>
+      <link>/posts/login-xyz/</link>
+      <pubDate>Tue, 08 Feb 2022 11:26:31 -0800</pubDate>
+      
+      <guid>/posts/login-xyz/</guid>
+      <description>I just skimmed https://blog.mycrypto.com/sign-in-with-ethereum-an-alternative-to-centralized-identity-providers. This reminds me partially of what uPort and 3Box are doing. I&amp;rsquo;m still very interested in a passwordless future where we use our wallets to sign in to things. Looks like this article is about https://login.xyz/, which has an OIDC server here: https://docs.login.xyz/servers/oidc-server.</description>
+    </item>
+    
+  </channel>
+</rss>
