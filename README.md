@@ -22,9 +22,31 @@ sudo docker run --rm -it \
   klakegg/hugo:latest
 ```
 
-## Publish it
+## Copy it to the server
 ```
 rsync -Prv /home/evans/gitlab.com/evanstucker/hugo-site/public/ 192.168.1.114:/srv/docker/ipfs/ipfs_fuse/
-ssh 192.168.1.114
-sudo docker exec -it ipfs ipfs add -r /ipfs
 ```
+
+## Connect to the IPFS container on the server
+```
+ssh 192.168.1.114
+sudo docker exec -it ipfs sh
+```
+
+## Add and publish it
+
+```
+CID=$(ipfs add -Q -r /ipfs)
+
+# Check it
+echo "https://ipfs.evanstucker.com/ipfs/${CID}"
+
+# Publish it
+# https://docs.ipfs.tech/how-to/publish-ipns/#publishing-ipns-names-with-kubo
+IPNS=$(ipfs name publish -Q "/ipfs/${CID}")
+
+# Check it again
+echo "https://ipfs.io/ipns/${IPNS}"
+```
+
+## Check
