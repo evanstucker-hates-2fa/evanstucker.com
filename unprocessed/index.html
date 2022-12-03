@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!--
+Thanks to http://htmlcheats.com/html/resize-the-html5-canvas-dyamically/ for the canvas resizing stuff.
+Thanks to https://codepen.io/ben-eb/pen/qqygBO for the radial gradient bits.
+-->
+<head>
+    <meta charset="utf-8">
+    <title>Evans Tucker</title>
+  <style>
+    html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0px;
+      border: 0;
+      overflow: hidden; /*  Disable scrollbars */
+      display: block;  /* No floating content on sides */
+    }
+    body {
+      background: radial-gradient(
+        circle farthest-side at
+          calc(var(--mouseX, 1) * 1px)
+          calc(var(--mouseY, 1) * 1px),
+        hsl(var(--mouseX, 5), 75%, 75%),
+        hsl(var(--mouseY, 45), 75%, 75%)
+        );
+    }
+
+  </style>
+</head>
+<body>
+  <canvas id='c' style='position: absolute; left: 0px; top: 0px;'></canvas>
+  <script>
+    (function() {
+
+      var htmlCanvas = document.getElementById('c');
+      var context = htmlCanvas.getContext('2d');
+      initialize();
+
+      function initialize() {
+        window.addEventListener('resize', resizeCanvas, false);
+        resizeCanvas();
+      }
+
+      function redraw() {
+        //context.strokeStyle = 'blue';
+        //context.lineWidth = '5';
+        //context.strokeRect(0, 0, window.innerWidth, window.innerHeight);
+        bigFont = htmlCanvas.width/16;
+        context.font = bigFont + "px Century Schoolbook L,serif";
+        context.fillStyle = "black";
+        context.textAlign = "center";
+        context.fillText("Evans Tucker", htmlCanvas.width/2, htmlCanvas.height/2);
+      }
+
+      function resizeCanvas() {
+        htmlCanvas.width = window.innerWidth;
+        htmlCanvas.height = window.innerHeight;
+        redraw();
+      }
+
+      document.addEventListener('mousemove', function (e) {
+        document.documentElement.style.setProperty('--mouseX', e.clientX);
+        document.documentElement.style.setProperty('--mouseY', e.clientY);
+      });
+
+
+    })();
+  </script>
+</body>
+</html>

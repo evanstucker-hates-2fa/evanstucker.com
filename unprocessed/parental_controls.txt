@@ -1,0 +1,5 @@
+I want to allow my kid access to information, but I don't want him to be scarred for life. I haven't taken a lot of steps to lock things down yet. So far, all I've done is:
+
+* Setup OpenDNS FamilyShield: https://www.opendns.com/setupguide/?url=familyshield
+* Scroll to the bottom of YouTube and set "Restricted Mode" to "On". https://support.google.com/youtube/answer/174084?co=GENIE.Platform%3DDesktop&hl=en
+* My kid doesn't have any accounts yet.

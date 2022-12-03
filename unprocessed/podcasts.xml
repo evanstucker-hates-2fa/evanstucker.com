@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no' ?>
+<opml version="2.0">
+  <head>
+    <title>AntennaPod Subscriptions</title>
+    <dateCreated>10 Feb 18 16:01:54 -0800</dateCreated>
+  </head>
+  <body>
+    <outline text="99% Invisible" title="99% Invisible" type="rss" xmlUrl="http://feeds.99percentinvisible.org/99percentinvisible" htmlUrl="http://99percentinvisible.org" />
+    <outline text="Benjamen Walker's Theory of Everything" title="Benjamen Walker's Theory of Everything" type="rss" xmlUrl="http://feeds.prx.org/toe" htmlUrl="https://toe.prx.org" />
+    <outline text="Bitcoins &amp; Gravy" title="Bitcoins &amp; Gravy" type="rss" xmlUrl="http://feeds.soundcloud.com/users/soundcloud:users:87604438/sounds.rss" htmlUrl="http://soundcloud.com/bitcoins-and-gravy" />
+    <outline text="Freakonomics Radio" title="Freakonomics Radio" type="rss" xmlUrl="http://feeds.feedburner.com/freakonomicsradio" htmlUrl="http://www.wnyc.org/articles/freakonomics-podcast" />
+    <outline text="Hidden Brain" title="Hidden Brain" type="rss" xmlUrl="https://www.npr.org/rss/podcast.php?id=510308" htmlUrl="http://npr.org/series/423302056/hidden-brain" />
+    <outline text="Invisibilia" title="Invisibilia" type="rss" xmlUrl="https://www.npr.org/rss/podcast.php?id=510307" htmlUrl="http://www.npr.org/programs/invisibilia" />
+    <outline text="Israel Story" title="Israel Story" type="rss" xmlUrl="http://feeds.feedburner.com/israelstory" htmlUrl="http://israelstory.org/" />
+    <outline text="Love + Radio" title="Love + Radio" type="rss" xmlUrl="http://feeds.feedburner.com/loveplusradio" htmlUrl="http://loveandradio.org/" />
+    <outline text="Planet Money" title="Planet Money" type="rss" xmlUrl="http://www.npr.org/rss/podcast.php?id=510289" htmlUrl="http://www.npr.org/planetmoney" />
+    <outline text="Radio Diaries" title="Radio Diaries" type="rss" xmlUrl="http://feed.radiodiaries.org/radio-diaries?id=510288" htmlUrl="http://www.radiodiaries.org" />
+    <outline text="Radiolab" title="Radiolab" type="rss" xmlUrl="http://feeds.wnyc.org/radiolab" htmlUrl="http://www.radiolab.org/series/podcasts/" />
+    <outline text="Radiolab Presents: More Perfect" title="Radiolab Presents: More Perfect" type="rss" xmlUrl="http://feeds.wnyc.org/moreperfect" htmlUrl="http://www.wnycstudios.org/shows/radiolabmoreperfect" />
+    <outline text="Snap Judgment" title="Snap Judgment" type="rss" xmlUrl="http://feeds.wnyc.org/snapjudgment-wnyc" htmlUrl="http://www.wnycstudios.org/shows/snapjudgment" />
+    <outline text="The Allusionist" title="The Allusionist" type="rss" xmlUrl="http://feeds.theallusionist.org/Allusionist" htmlUrl="http://theallusionist.org" />
+    <outline text="The Kitchen Sisters Present" title="The Kitchen Sisters Present" type="rss" xmlUrl="http://feeds.fugitivewaves.org/fugitivewaves" htmlUrl="http://www.kitchensisters.org/fugitivewaves/" />
+    <outline text="the memory palace" title="the memory palace" type="rss" xmlUrl="http://feeds.feedburner.com/thememorypalace" htmlUrl="http://thememorypalace.us" />
+    <outline text="The Moth" title="The Moth" type="rss" xmlUrl="http://feeds.feedburner.com/themothpodcast" htmlUrl="http://themoth.org/" />
+    <outline text="The Truth" title="The Truth" type="rss" xmlUrl="http://feeds.feedburner.com/thetruthapm" htmlUrl="http://thetruthpodcast.com" />
+    <outline text="This American Life" title="This American Life" type="rss" xmlUrl="http://feed.thisamericanlife.org/talpodcast" htmlUrl="https://www.thisamericanlife.org" />
+    <outline text="Unchained: Big Ideas From The Worlds Of Blockchain And Cryptocurrency" title="Unchained: Big Ideas From The Worlds Of Blockchain And Cryptocurrency" type="rss" xmlUrl="http://unchained.libsyn.com/unchained" htmlUrl="http://unchainedpodcast.co/" />
+  </body>
+</opml>
