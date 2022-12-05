@@ -1,0 +1,59 @@
+#!/bin/bash
+
+function prepare_test {
+    rm -rf ~/bad_files
+    mkdir -p ~/bad_files/deep
+    cd ~/bad_files/deep
+    touch $'..\\dotdotbackslash'
+    touch $'\\backslash'
+    touch $'trailing backslashes\\'
+    touch $'..\n'
+    touch $'.\n'
+    touch $'all\tthe\nbad characters ! : ; \\ * ? & | > < \0'
+    touch $'how\tyou\tlike\ttabs.txt'
+    touch $'newlines\nsuck\nmore.txt'
+    touch $'regular_name.txt'
+    touch $'spaces suck.txt'
+    touch $'whitespace at the end seems diabolical.txt '
+    touch $'whitespace at the end seems diabolical.txt\n'
+    touch $'whitespace at the end seems diabolical.txt\t'
+    set -x
+}
+
+# Works for commands that accept a single file argument.
+prepare_test
+echo "========== execdir =========="
+find . -type f -execdir rm -v {} ';'
+echo 'Press Enter'; read
+
+exit
+
+# Unsafe! Never use xargs without -0!
+prepare_test
+echo "========== xargs without -0 =========="
+find . -type f | xargs rm -v 
+echo 'Press Enter'; read
+
+# Works for commands that accept multiple file arguments.
+prepare_test
+echo "========== xargs =========="
+find . -type f -print0 | xargs -0 rm -v 
+echo 'Press Enter'; read
+
+# Works for running a script that takes a single file argument.
+prepare_test
+echo "========== sh -c =========="
+find . -type f -exec sh -c '
+    echo "<file>$0</file>" # Success
+    rm -v "$0"
+' {} ';'
+echo 'Press Enter'; read
+
+# This method is unsafe! It doesn't preserve whitespace at the end.
+prepare_test
+echo "========== while read =========="
+find . -type f -print0 | while read -d '' file; do
+    echo "<file>${file}</file>"
+done
+echo 'Press Enter'; read
+

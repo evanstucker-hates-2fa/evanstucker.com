@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Cut through the bullshit and just read the code with this "nocomment" alias.
+if ! $(grep -q nocomment ~/.bashrc); then
+cat << EOF >> ~/.bashrc
+alias nocomment=$'sed -r \'/^[ \t]*(#|;)/d;/^[ \t]*$/d;\''
+EOF
+fi
+
+# spf13-vim is too much for me. This is all I need. 
+cat << EOF > ~/.vimrc
+autocmd FileType sh setlocal et sw=4 sts=4
+autocmd FileType puppet setlocal et sw=2 sts=2
+set background=dark
+EOF
+
+# Add my git config
+cat << EOF > ~/.gitconfig
+[user]
+	name = Evans Tucker
+	email = evans.tucker@gmail.com
+EOF

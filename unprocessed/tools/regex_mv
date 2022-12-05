@@ -1,0 +1,33 @@
+#!/usr/bin/perl
+
+use Getopt::Std;
+
+%opt = ();
+getopts("i",\%opt);
+
+if (!@ARGV) {
+  die "Usage: rename regex filename ...\n";
+}
+else {
+  $regex = shift @ARGV;
+  if (!@ARGV) {
+     @ARGV = <STDIN>;
+     chomp(@ARGV);
+  }
+}
+
+$counter = 1;
+foreach $_ (@ARGV) {
+  $old = $_;
+  eval $regex; die $@ if $@;
+  $new = $_;
+  if (-f $new || -d $new) { warn "Rename $old to $new FAILED: $new already exists.\n"; }
+  else {
+    rename($old, $new) or die "Rename $old to $new FAILED: Could not rename $old to $new.\nRENAME DIED!";
+    print "Rename $old to $new SUCCESSFUL.\n";
+  }
+  $counter++;
+}
+
+exit(0);
+

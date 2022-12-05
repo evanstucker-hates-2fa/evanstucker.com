@@ -1,0 +1,57 @@
+#!/bin/bash
+
+if [[ $1 == 'startover' ]]; then
+    rm -frv /srv/Archive/Unsorted_Photos /srv/Archive/Photos
+    #cp -lRv /srv/Archive/Unsorted_Photos-bak /srv/Archive/Unsorted_Photos
+    #fdupes -dNr /srv/Archive/Unsorted_Photos/
+    #cp -lRv /srv/Archive/Unsorted_Photos /srv/Archive/Unsorted_Photos-deduped
+    cp -lRv /srv/Archive/Unsorted_Photos-deduped /srv/Archive/Unsorted_Photos
+
+    find /srv/Archive/Unsorted_Photos -type f -name '*.JPG' -exec sh -c '
+        mv -iv "$0" "${0%.JPG}.jpg"
+    ' {} ';'
+
+    find /srv/Archive/Unsorted_Photos -type f -name '*.MOV' -exec sh -c '
+        mv -iv "$0" "${0%.MOV}.mov"
+    ' {} ';'
+
+    find /srv/Archive/Unsorted_Photos -type f -name '*.AVI' -exec sh -c '
+        mv -iv "$0" "${0%.AVI}.avi"
+    ' {} ';'
+
+    find /srv/Archive/Unsorted_Photos -type f -name '*.VOB' -exec sh -c '
+        mv -iv "$0" "${0%.VOB}.vob"
+    ' {} ';'
+
+    find /srv/Archive/Unsorted_Photos -type f -name '*.THM' -exec rm -v {} ';'
+
+    # Make the directory structure in Photos less horrible.
+    find /srv/Archive/Unsorted_Photos/Photos -type f -execdir mv {} .. ';'
+    find /srv/Archive/Unsorted_Photos/Photos -type d -empty -delete
+fi
+
+#find /srv/Archive/Unsorted_Photos -type f \( \
+#    -name 'IMG_????????_??????.jpg' -o \
+#    -name 'img_????.jpg' -o \
+#    -name 'IMG_????.jpg' -o \
+#    -name 'DSC_????.jpg' -o \
+#    -name 'DSC?????.jpg' -o \
+#    -name '????-??-?? ??.??.??.jpg' \
+#    \) -exec sh -c '
+#    exiv2 -F -t mv "$0"
+#' {} ';'
+#
+#while read file; do exiv2 -F -t mv "$file"; done < ~/rename.txt
+
+#mkdir -p /srv/Archive/Photos/19{00..99}/{01..12}
+#mkdir -p /srv/Archive/Photos/20{00..15}/{01..12}
+
+#find /srv/Archive/Unsorted_Photos/Photos -type f -regextype posix-extended -regex '.*/[0-9]{8}_[0-9]{6}.jpg' -exec sh -c '
+#    name=$(basename "$0")
+#    year=$(echo $(basename "$0") | cut -c 1-4)
+#    month=$(echo $(basename "$0") | cut -c 5-6)
+#    mv -iv "$0" "/srv/Archive/Photos/${year}/${month}/${name}"
+#' {} ';'
+
+# Delete empty directories when done.
+#find /srv/Archive/Unsorted_Photos -type d -empty -delete

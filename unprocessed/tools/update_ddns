@@ -1,0 +1,72 @@
+#!/bin/bash
+
+# A handy script that can update your dynamic DNS (DDNS) from a couple of
+# different types of routers on he.net's DDNS service. I think I configured the
+# ASUS router to send it's logs to my server, so I was grabbing it's IP from
+# the logging.
+
+clink_password='REDACTED'
+domain_name='dyn.evanstucker.com'
+dyn_password='REDACTED'
+name_server='ns1.he.net'
+
+##### Get global IPv4 address
+
+# CenturyLink XyXEL C1000Z Router
+#session=$(
+#  curl -s -c - -d "admin_username=admin" -d "admin_password=${clink_password}" http://192.168.0.1/login.cgi -o /dev/null | \
+#  tail -n 1 | \
+#  awk '{print $7}'
+#)
+#global_ipv4=$(
+#  curl -s -b "SESSION=$session" http://192.168.0.1/modemstatus_connectionstatus.html | \
+#  grep 'var wanip =' | \
+#  grep -oE '([0-9]+\.){3}[0-9]+'
+#)
+
+# ASUS RT-N66U Router
+global_ipv4=$(
+  grep 'local  IP address' /var/log/router.log | tail -n 1 | awk '{print $9}'
+)
+
+echo -e "IPv4:\t$global_ipv4"
+
+##### Get A record
+
+a_record=$(dig +short @$name_server $domain_name A)
+
+echo -e "A:\t$a_record"
+
+##### Update A record
+
+if [[ "$global_ipv4" != "$a_record" ]]; then
+    echo "Updating DNS..."
+    curl "http://${domain_name}:${dyn_password}@dyn.dns.he.net/nic/update?hostname=${domain_name}&myip=${global_ipv4}"
+    echo
+fi
+
+##### Get global IPv6 address
+
+# Added head because when rebooting the router, I sometimes temporarily have
+# two addresses.
+global_ipv6=$(
+  ip -6 address show scope global | \
+  sed -n -r 's#    inet6 ([0-9a-f:]+)/.*#\1#p' | \
+  head -n 1
+)
+
+echo -e "IPv6:\t${global_ipv6}"
+
+##### Get AAAA record
+
+aaaa_record=$(dig +short @$name_server $domain_name AAAA)
+
+echo -e "AAAA:\t${aaaa_record}"
+
+##### Update AAAA record
+
+if [[ "$global_ipv6" != "$aaaa_record" ]]; then
+    echo "Updating DNS..."
+    curl "http://${domain_name}:${dyn_password}@dyn.dns.he.net/nic/update?hostname=${domain_name}&myip=${global_ipv6}"
+    echo
+fi

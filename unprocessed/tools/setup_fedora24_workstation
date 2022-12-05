@@ -1,0 +1,33 @@
+#!/bin/bash
+
+if [[ $USER != 'root' ]]; then
+  echo 'ERROR: This script must be run with sudo.'
+  exit
+fi
+
+random_hostname=$(
+  curl 'http://www.behindthename.com/random/random.php?number=1&gender=both&surname=&all=yes' 2>&1 | \
+  grep -oE 'href="/name/[^"]+' | \
+  cut -d '/' -f 3
+)
+#nmcli g hostname ekram.localdomain
+hostnamectl set-hostname "$random_hostname"
+
+# Enable NOPASSWD for users in the wheel group, so I don't have to type a
+# password with sudo.
+sed -i -r '
+	s/^%wheel\tALL=\(ALL\)\tALL$/#%wheel\tALL=(ALL)\tALL/;
+	s/^# %wheel\tALL=\(ALL\)\tNOPASSWD: ALL$/%wheel\tALL=(ALL)\tNOPASSWD: ALL/;
+' /etc/sudoers
+
+if ! $(grep -qE '^fastestmirror=True$' /etc/dnf/dnf.conf); then
+	echo 'fastestmirror=True' >> /etc/dnf/dnf.conf
+fi
+
+if ! $(grep -qF '192.168.1.2:/srv' /etc/fstab); then
+  echo '192.168.1.2:/srv /srv nfs defaults,noauto 0 0' >> /etc/fstab
+fi
+
+
+dnf upgrade -y
+dnf install -y vim

@@ -1,0 +1,51 @@
+#!/usr/bin/perl
+
+# I think I wrote this a long time ago to rename a bunch of music or photo files. I forget.
+
+#foreach my $dir (@ARGV) {
+#  opendir(DIR, "$dir");
+#  @dirlist = readdir(DIR);
+#  foreach my $file (@dirlist) {
+  foreach my $file (@ARGV) {
+
+    $newfile = $file;
+
+    # Kill /\:*?"<>| to stay within the Joilet/VFAT/Unix filesystems.
+    $newfile =~ s/\///g;
+    $newfile =~ s/\\//g;
+    $newfile =~ s/://g;
+    $newfile =~ s/\*//g;
+    $newfile =~ s/\?//g;
+    $newfile =~ s/"//g;
+    $newfile =~ s/<//g;
+    $newfile =~ s/>//g;
+    $newfile =~ s/\|//g;
+
+    $newfile = lc($newfile); # Lowercase
+    $newfile =~ s/_/ /g; # Convert "_" to " "
+    $newfile =~ s/\[/\(/g; # Change brackets to parenthesis
+    $newfile =~ s/\]/\)/g;
+    $newfile =~ s/\{/\(/g; # Change braces to parenthesis
+    $newfile =~ s/\}/\)/g;
+    $newfile =~ s/&/ and /g; # Convert "&" to " and "
+    $newfile =~ s/@/ at /g; # Convert "@" to " at "
+    $newfile =~ s/--/ - /g; # Convert "--" to " - "
+    $newfile =~ s/ +/ /g; # Kill multiple spaces
+    $newfile =~ s/^ //g; # Kill leading space
+    $newfile =~ s/ $//g; # Kill trailing space
+
+    if ($newfile eq $file) {
+      #print "Not moving $file\n";
+    }
+    else {
+      if (-e $newfile) {
+        print "File exists.   $newfile\n";
+      }
+      else {
+        print "\"$file\" --> \"$newfile\"\n";
+        #rename($file, $newfile);
+      }
+    }
+  }
+  #closedir DIR;
+#}

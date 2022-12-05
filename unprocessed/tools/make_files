@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Usage: ./filegen.sh <number of files> <file size in bytes>
+
+counter=0
+limit=$1
+size=$2
+
+while [ "$counter" -lt "$limit" ]
+do
+  openssl rand -out $counter.bin $size
+  # There's another method using "dd" and "/dev/urandom".
+  counter=`expr $counter + 1`
+done

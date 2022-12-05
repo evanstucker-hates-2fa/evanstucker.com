@@ -1,0 +1,65 @@
+#!/bin/bash
+# Validates your code.
+# Apparently requires a new version of the "file" command. It works with file 5.11 I think. 
+
+final_return_code=0
+for file_name in "$@"; do
+  return_code=0
+  file_type=$(file -b "$file_name")
+  echo "Validating ${file_name}... "
+  case $file_type in
+    *with\ CRLF\ line\ terminators*)
+      return_code=1
+      echo 'ERROR: What are these bullshit Windows characters in here! Run dos2unix on this shit, then try again.'
+      ;;
+    'ASCII text')
+      # This requires the aspell and aspell-en packages to do English spell checking.
+      aspell_output=$(cat "$file_name" | aspell list)
+      if [[ $(echo -n "$aspell_output" | wc -l) -ne 0 ]]; then
+        return_code=1
+        echo "$aspell_output"
+        echo 'ERROR: Learn to spell, idiot... or learn to add words to the aspell dictionary.'
+      fi
+      ;;
+    'Bourne-Again shell script, ASCII text executable')
+      bash -n "$file_name"; return_code=$?
+      if [[ $return_code -ne 0 ]]; then
+        echo 'ERROR: Your bash make my machine crash.'
+      fi
+      ;;
+    HTML*|XML*)
+      # This requires the java and the Nu HTML checker:
+      # https://github.com/validator/validator.
+      vnu_output=$(java -jar ~/dist/vnu.jar "$file_name" 2>&1)
+      if [[ $(echo -n "$vnu_output" | wc -l) -ne 0 ]]; then
+        return_code=1
+        echo "$vnu_output"
+        echo 'ERROR: Your markup language smells like fart-cup stankage.'
+      fi
+      ;;
+    'Perl script, ASCII text executable')
+      if $(grep -q -E '(BEGIN|UNITCHECK|CHECK|use)' $file_name); then
+        return_code=1
+        echo 'ERROR: This file may be dangerous to check. See the "-c" argument in "perldoc perlrun" for more info. Fuck Perl.'
+      else
+        perl_output=$(perl -c "$file_name" 2>&1 | sed -r '/syntax OK$/d')
+        if [[ $(echo -n "$perl_output" | wc -l) -ne 0 ]]; then
+          return_code=1
+          echo "$perl_output"
+          echo 'ERROR: Just use another language. Fuck Perl.'
+        fi
+      fi
+      ;;
+    *)
+      return_code=1
+      echo 'ERROR: WTF is this?'
+      ;;
+  esac
+  if [[ $return_code -ne 0 ]]; then
+    final_return_code=1
+  else
+    echo 'OK'
+  fi
+  echo
+done
+exit $final_return_code
