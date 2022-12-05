@@ -1,0 +1,10 @@
+sudo dnf install -y transmission-daemon
+
+# I keep all my files on the /srv mount point.
+sudo mkdir -p /srv/transmission/Downloads
+sudo chown transmission:transmission /srv/transmission/Downloads
+sudo sed -r 's#/var/lib/transmission/Downloads#/srv/transmission/Downloads#' /var/lib/transmission/.config/transmission-daemon/settings.json
+
+sudo systemctl enable transmission-daemon.service
+sudo systemctl start transmission-daemon.service
+echo 'Use "transmission-remote -a [URL]" to add torrent files.'

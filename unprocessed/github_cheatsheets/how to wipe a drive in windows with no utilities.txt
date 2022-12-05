@@ -1,0 +1,16 @@
+debug 
+-F 200 L1000 0 
+-A CS:100 
+xxxx:0100 MOV AX,301 
+xxxx:0103 MOV BX,200 
+xxxx:0106 MOV CX,1 
+xxxx:0109 MOV DX,80 
+
+NOTE: Type 80 for the Main hard drive - HD 0, or type 81 for the Second hard drive - HD 1 
+
+xxxx:010C INT 13 
+xxxx:010E INT 20 
+xxxx:0110 (Leave this line blank and press the <Enter> key) 
+-G 
+
+The message, Program terminated normally, appears.

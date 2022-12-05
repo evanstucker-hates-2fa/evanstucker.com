@@ -1,0 +1,5 @@
+# Show all members of the group "dudebros"
+ldapsearch -x -H ldap://ldap.example.com -b 'dc=example,dc=com' '(&(objectclass=nisNetgroup)(cn=dudebros))'
+
+# Show all NetGroups that the user is a member of.
+ldapsearch -x -H ldap://ldap.example.com -b 'dc=example,dc=com' '(nisNetgroupTriple=*etucker*)' dn

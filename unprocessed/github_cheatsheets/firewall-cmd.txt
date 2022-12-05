@@ -1,0 +1,11 @@
+firewall-cmd --permanent --zone=FedoraServer --add-service=https
+firewall-cmd --permanent --zone=FedoraServer --add-service=iscsi-target
+firewall-cmd --permanent --zone=home --add-port=514/udp
+firewall-cmd --permanent --zone=home --add-service=https
+firewall-cmd --permanent --zone=home --add-service=iscsi-target
+firewall-cmd --permanent --zone=home --add-service=nfs
+firewall-cmd --permanent --zone=home --add-service=rpc-bind
+firewall-cmd --permanent --zone=home --add-service=samba
+firewall-cmd --permanent --zone=home --add-source=$ipv4_subnet
+firewall-cmd --permanent --zone=home --add-source=$ipv6_subnet
+firewall-cmd --reload

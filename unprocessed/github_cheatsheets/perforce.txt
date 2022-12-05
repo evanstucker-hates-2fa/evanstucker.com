@@ -1,0 +1,90 @@
+Overview
+I am a git user. I know git. I don't know Perforce. This was a helpful introduction:
+http://stackoverflow.com/questions/17267218/perforce-for-git-users
+Here is the actual P4 User's Guide:
+http://www.perforce.com/perforce/r15.1/manuals/p4guide/index.html
+
+
+Install and configure Perforce:
+The only thing you should need to change is the View.
+You have to log out and log back in after configuring for this to work. Otherwise you will get errors like:
+Client 'evans-laptop' unknown - use 'client' command to create it.
+sudo rpm --import https://package.perforce.com/perforce.pubkey
+sudo bash -c $'cat << EOF > /etc/yum.repos.d/perforce.repo
+[perforce]
+name=Perforce
+baseurl=http://package.perforce.com/yum/rhel/7/x86_64
+enabled=1
+gpgcheck=1
+EOF
+'
+sudo yum install -y helix-cli
+cat << EOF > ~/.p4config
+P4PORT=perforce.example.com:1666
+P4CLIENT=${USER}_${HOSTNAME}
+EOF
+cat << EOF | p4 client -i
+Client: ${USER}_${HOSTNAME}
+Root:   /home/${USER}
+View:
+        //depots/... //${USER}_${HOSTNAME}/depots/...
+        //depot/... //${USER}_${HOSTNAME}/depot/...
+        -//depot/not_this_directory/... //${USER}_${HOSTNAME}/depot/not_this_directory/...
+        //.git-fusion/... //${USER}_${HOSTNAME}/.git-fusion/...
+EOF
+
+View the entire history of a file with all changes included
+p4 filelog modules/product_a/manifests/init.pp | grep -E '^\.\.\. #' | awk '{ print $4 }' | xargs p4 describe -db | less
+
+Cleaning up Perforce
+# Change to the directory you want to clean up.
+# Run this:
+p4 clean
+  
+# Then clean up any empty directories (p4 ignores directories - it only cares about files...)
+find . -type d -empty -delete
+
+Moving a directory
+First you have to open every file in the directory. The '...' is not me being lazy, you have to literally put an ellipsis there. That's the Perforce version of the asterisk.
+p4 open ~/depot/quicksync/puppet/modules/product_a/manifests/svcaccts/...
+You may have to create the destination directory too if it doesn't exist. I'm not 100% certain.
+Then you can move the files:
+p4 move modules/product_a/manifests/svcaccts/... modules/profile/manifests/product_a/svcaccts/...
+
+Backing out a change that was submitted with adds and edits
+From: http://answers.perforce.com/articles/KB/3474?startURL=%2Farticles%2FKB_Article%2FBacking-Out-Submitted-Changelists
+p4 sync @999
+p4 edit //depot/ola.txt
+p4 add //depot/bar.txt
+p4 sync @1000
+p4 resolve -ay
+p4 sync
+p4 resolve
+p4 delete //depot/foo.txt
+p4 submit
+
+List all my changes this month
+# Number of changes
+p4 changes -s submitted -u $USER @$(date +%Y/%m/23:00:00:00 -d 'last month'),@$(date +%Y/%m/22:23:59:59) | wc -l
+  
+# Content of changes
+p4 changes -s submitted -u $USER @$(date +%Y/%m/23:00:00:00 -d 'last month'),@$(date +%Y/%m/22:23:59:59) | cut -d ' ' -f 2 | xargs p4 describe -db | less
+
+Diff two files in the depot
+p4 diff2 manifests/nodes/product_a.pp#108 manifests/nodes/product_a.pp#110
+
+#Kinda like git blame
+p4 annotate
+  
+p4 diff -db ecm.pp#3
+p4 sync b2b.pp#4
+p4 resolve (see ? to advanced options)
+p4 revert
+p4 opened
+  
+# Show just the file names of opened files.
+p4 opened | sed -r 's#^//depot/##;s/#[0-9]+.*//;'
+ 
+p4 edit
+p4 submit (-d to enter desciption?)
+p4 status?

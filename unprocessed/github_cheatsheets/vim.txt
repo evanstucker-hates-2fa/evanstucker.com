@@ -1,0 +1,24 @@
+If you create a .vimrc file, the behavior of vim will change - even if it's empty. I think .vimrc triggers "nocompatible" mode. Anyway, here are the contents of my ~/.vimrc:
+
+autocmd FileType sh setlocal et sw=4 sts=4
+autocmd FileType puppet setlocal et sw=2 sts=2
+set background=dark
+
+To determine a file's type, open it in vim and then enter:
+
+:set filetype?
+
+Fixing indentation? Not? This is crap: http://vim.wikia.com/wiki/Fix_indentation
+gg=G
+
+Converting indentation from two spaces to four
+
+:set ts=2 sts=2 noet
+:retab!
+:set ts=4 sts=4 et
+:retab
+
+Wrap lines with "gq<Enter>".
+Unwrap lines with "vipJ"
+
+https://github.com/puppetlabs/puppet-syntax-vim

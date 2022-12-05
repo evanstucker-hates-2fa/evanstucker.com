@@ -1,0 +1,27 @@
+# Enable a connection
+nmcli connection modify enp5s0 connection.autoconnect yes 
+
+# Set hostname. You may want to use hostnamectl instead if you have it.
+nmcli general hostname neirin.localdomain
+
+# Static IP
+nmcli connection modify enp7s0 ipv4.method manual
+nmcli connection modify enp7s0 ipv4.addresses '192.168.1.2/24'
+nmcli connection modify enp7s0 ipv4.gateway '192.168.1.1'
+nmcli connection modify enp7s0 ipv4.dns 8.8.8.8
+nmcli connection modify enp7s0 +ipv4.dns 8.8.4.4
+
+# DHCP
+nmcli connection modify enp7s0 ipv4.method auto
+
+# Show all ipv4.dns-search (user managed) and IP4.DOMAIN (DHCP) search domains:
+while IFS=: read name uuid type device; do echo "$name $uuid"; nmcli c show $uuid | grep -E '(ipv4.dns-search|IP4.DOMAIN)'; done < <(nmcli -t c show)
+
+# Remove all ipv4.dns-search (user managed) search domains:
+while IFS=: read name uuid type device; do echo "$name $uuid"; nmcli c m $uuid ipv4.dns-search ''; done < <(nmcli -t c show)
+
+# Remove a single ipv4.dns-search (user managed) search domain:
+nmcli c m fe980b60-aac2-395c-a134-e7d55782d6e9 ipv4.dns-search ''
+
+# Set a single ipv4.dns-search (user managed) search domain to evanstucker.com dev.evanstucker.com:
+nmcli c m fe980b60-aac2-395c-a134-e7d55782d6e9 ipv4.dns-search 'evanstucker.com dev.evanstucker.com'

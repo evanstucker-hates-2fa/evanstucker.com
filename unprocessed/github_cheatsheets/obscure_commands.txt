@@ -1,0 +1,8 @@
+Show metadata for video files
+mediainfo --full-scan file.mp4
+
+Find duplicate images
+http://softwarerecs.stackexchange.com/questions/9774/command-line-tool-to-check-whether-two-images-are-exactly-the-same-graphically
+
+Serve current directory over HTTP port 8000:
+python -m SimpleHTTPServer &

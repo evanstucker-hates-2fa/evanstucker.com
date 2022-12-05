@@ -1,0 +1,58 @@
+# git cheatsheet
+
+git add <pathspec>
+git blame <pathspec>
+git branch -a
+git branch -d <branchname>
+git checkout
+git checkout -b <branchname>
+git clone git@github.com:evanstucker-hates-2fa/cheatsheets.git
+git commit -m <message>
+git diff HEAD 
+git diff HEAD^ HEAD
+git diff master...<branchname>
+git fetch --all --prune
+git log <pathspec>
+git merge master
+git pull
+git push
+git push --set-upstream origin <branchname>
+git rm <pathspec>
+git status
+git show @{2018-05-23}:build/cluster.tf
+git show d085a2057af72e9021c353b6a6964d3c0ab9c1b3:build/cluster.tf
+
+# lists branches merged into master
+git branch --merged master
+
+# lists branches merged into HEAD (i.e. tip of current branch)
+git branch --merged
+
+# lists branches that have not been merged
+git branch --no-merged
+
+# Find as good common ancestors as possible for a merge
+git merge-base HEAD etucker_fsu
+
+# Deleting branches
+git branch -d branch_name
+git push origin :branch_name || git branch -r -d branch_name
+
+# Deletes all stale remote-tracking branches under <name>. These stale branches have already been removed from the remote repository referenced by <name>, but are still locally available in "remotes/<name>".
+git remote prune origin
+
+# Something similar to git remote prune origin? Except local? More experimentation needed.
+git fetch -p
+
+# How to re-watch all Github repos if you've unwatched them.
+
+Create a Personal Access Token, put it where the word "REDACTED" is in the script below.
+
+    for repo in $(list_my_git_repos.sh | grep github | cut -d: -f2- | sed 's/\.git//'); do
+      echo "===== $repo"
+      curl \
+        -H 'Accept: application/vnd.github.v3+json' \
+        -X PUT \
+        -u 'evanstucker-hates-2fa:REDACTED' \
+        "https://api.github.com/user/subscriptions/${repo}";
+    done

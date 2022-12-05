@@ -1,0 +1,41 @@
+In targetcli, issue these commands:
+
+cd /backstores/fileio
+create name=vinny file_or_dev=/srv/iscsi_test/vinny size=1G
+cd /iscsi
+create
+cd /iscsi/iqn.2003-01.org.linux-iscsi.server.x8664:sn.484f56a987d1/tpg1
+set attribute demo_mode_write_protect=0 generate_node_acls=1 cache_dynamic_acls=1
+set auth userid=vinny
+set auth password=redacted
+cd /iscsi/iqn.2003-01.org.linux-iscsi.server.x8664:sn.484f56a987d1/tpg1/luns
+create /backstores/fileio/vinny
+cd /iscsi/iqn.2003-01.org.linux-iscsi.server.x8664:sn.484f56a987d1/tpg1/portals
+create
+cd /
+saveconfig
+exit
+
+How to connect to iSCSI from a Fedora workstation:
+
+sudo dnf install iscsi-initiator-utils
+
+sudo cp /etc/iscsi/iscsid.conf /etc/iscsi/iscsid.conf.$(date +%s)
+
+Edit these settings in /etc/iscsi/iscsid.conf:
+
+node.session.auth.authmethod = CHAP
+node.session.auth.username = vinny
+node.session.auth.password = redacted
+
+sudo iscsiadm --mode node --targetname iqn.2003-01.org.linux-iscsi.server.x8664:sn.484f56a987d1 --portal 192.168.11.2:3260 --op new
+sudo iscsiadm --mode node --targetname iqn.2003-01.org.linux-iscsi.server.x8664:sn.484f56a987d1 --portal 192.168.11.2:3260 --op show -S
+# Verify username and password.
+sudo iscsiadm --mode node --targetname iqn.2003-01.org.linux-iscsi.server.x8664:sn.484f56a987d1 --portal 192.168.11.2:3260 --login
+
+Then just mount the new disk, like you normally would.
+
+When you're done, umount it and run:
+
+sudo iscsiadm --mode node --targetname "iqn.2003-01.org.linux-iscsi.server.x8664:sn.484f56a987d1" --portal "192.168.11.2:3260" --logout
+

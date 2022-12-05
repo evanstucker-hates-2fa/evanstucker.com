@@ -1,0 +1,9 @@
+sudo pdnsutil import-tsig-key nameofkey hmac-md5 'REDACTED'
+sudo pdnsutil activate-tsig-key oob.evanstucker.com dhcpdupdate slave
+
+# This forces the DNS master to send an update to a slave.
+sudo pdns_control notify-host oob.evanstucker.com <host>
+
+sudo pdnsutil delete-zone 1.168.192.in-addr.arpa
+sudo pdnsutil create-slave-zone 1.168.192.in-addr.arpa 192.168.1.1
+sudo pdnsutil list-zone evanstucker.com

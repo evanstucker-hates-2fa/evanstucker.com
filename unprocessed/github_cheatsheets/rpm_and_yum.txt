@@ -1,0 +1,87 @@
+# This seems interesting...
+yum-plugin-versionlock
+yum versionload add ???
+
+# Find errors in the RPM database:
+rpm -qa > /dev/null
+
+# Lousy notes about recovering a corrupt database:
+lsof | grep /var/lib/rpm
+rm -rf /var/lib/rpm/__db.00*
+# Backup /var/lib/rpm
+/usr/lib/rpm/rpmqb_verify *
+# This doesn't reveal errors, have to loop it.
+for db in *; do /usr/lib/rpm/rpmqb_verify $db; done
+
+# Verify what changed since a package was first installed
+rpm -V $package
+rpm -Va
+# or use yum-plugin-verify
+yum verify $package
+yum verify-rpm $package
+
+# Recover permissions or ownership from initial package install.
+rpm --setperms $package
+rpm --setugids $package
+# or yum reinstall
+
+# How to find all versions of a package in all available yum repos
+repoquery --show-dupes --location device-mapper-persistent-data
+
+How to solve yum dependency issues
+This is copied from https://confluence.example.com/display/maintenances/Package+Dependency+Issues
+
+First, cache the output of a yum upgrade: 
+sudo yum upgrade -v > /tmp/yuck
+Look at the bottom of the /tmp/yuck file. You'll see something like this: 
+Packages skipped because of dependency problems:
+libgudev1-147-2.63.0.1.el6.x86_64 from OL6.7
+lvm2-2.02.118-2.el6.x86_64 from OL6.7
+lvm2-libs-2.02.118-2.el6.x86_64 from OL6.7
+Start with the first package. Search for "<package> requires": 
+[evans@server ~]$ grep 'libgudev1-147-2.63.0.1.el6.x86_64 requires' /tmp/yuck
+libgudev1-147-2.63.0.1.el6.x86_64 requires: libudev = 147-2.63.0.1.el6
+[evans@server ~]$
+Looks like libgudev1 requires libudev-147-2.63.0.1.el6, so let's search for that:
+[evans@server ~]$ grep 'libudev-147-2.63.0.1.el6' /tmp/yuck
+--> libudev-147-2.63.0.1.el6.i686 from OL6.7 excluded (priority)
+--> libudev-147-2.63.0.1.el6.x86_64 from OL6.7 excluded (priority)
+--> libudev-147-2.63.0.1.el6.x86_64 from OL6.7-updates excluded (priority)
+[evans@server ~]$
+OK, priorities are probably wrong. Let's look at all our priorities, sorted from highest priority (lowest integer) to lowest priority (highest integer): 
+[evans@server ~]$ grep -rhE '(baseurl|priority)' /etc/yum.repos.d/* | sed -n -r '1h;1!H;${g;s/baseurl=([^\n]+)\n/\1\$\n/g;s/\$\npriority=/\t/g;s/\$\n/\t99\n/g;p;}' | column -t | sort -k 2 -n
+http://cobbler.example.com/LocalRepo/athena-6                               9
+http://cobbler.example.com/LocalRepo/dag-6-x86_64                           15
+http://cobbler.example.com/LocalRepo/epel-6-x86_64                          15
+http://cobbler.example.com/LocalRepo/misc-6                                 15
+http://cobbler.example.com/LocalRepo/puppetlabs-6                           60
+http://cobbler.example.com/LocalRepo/UEK/UEK3                               91
+http://cobbler.example.com/cobbler/ks_mirror/OL6.7-x86_64/HighAvailability  96
+http://cobbler.example.com/cobbler/ks_mirror/OL6.7-x86_64/LoadBalancer      96
+http://cobbler.example.com/cobbler/ks_mirror/OL6.7-x86_64/Server            96
+http://cobbler.example.com/LocalRepo/ol-6.7-updates                         96
+http://cobbler.example.com/cobbler/ks_mirror/OL6.5-x86_64/HighAvailability  99
+http://cobbler.example.com/cobbler/ks_mirror/OL6.5-x86_64/LoadBalancer      99
+http://cobbler.example.com/cobbler/ks_mirror/OL6.5-x86_64/Server            99
+http://cobbler.example.com/LocalRepo/athena-perl                            99
+http://cobbler.example.com/LocalRepo/epocrates-6-x86_64                     99
+http://cobbler.example.com/LocalRepo/ol-6.5-updates                         99
+http://epocrepos.example.com/epoc-el6-noarch                                   99
+http://epocrepos.example.com/epoc-el6-x86_64                                   99
+http://epocrepos.example.com/epoc-epel6_x86_64                                 99
+http://epocrepos.example.com/java8                                             99
+[evans@server ~]$
+Now, let's figure out everywhere that the libudev package can be found: 
+[evans@server ~]$ repoquery --show-dupes --location libudev
+http://cobbler.example.com/cobbler/ks_mirror/OL6.5-x86_64/Server/Packages/libudev-147-2.51.0.1.el6.i686.rpm
+http://cobbler.example.com/cobbler/ks_mirror/OL6.5-x86_64/Server/Packages/libudev-147-2.51.0.1.el6.x86_64.rpm
+http://cobbler.example.com/LocalRepo/UEK/UEK3/RPMS/libudev-147-2.51.0.1.el6.x86_64.rpm
+http://cobbler.example.com/cobbler/ks_mirror/OL6.7-x86_64/Server/Packages/libudev-147-2.63.0.1.el6.i686.rpm
+http://cobbler.example.com/cobbler/ks_mirror/OL6.7-x86_64/Server/Packages/libudev-147-2.63.0.1.el6.x86_64.rpm
+http://cobbler.example.com/LocalRepo/ol-6.7-updates/RPMS/libudev-147-2.63.0.1.el6.x86_64.rpm
+[evans@server ~]$
+Now we have to go over each repo that contains any version of the package and see which one has the highest priority. It looks like the UEK3 repo has the highest priority. That's our problem. We need the libudev-147-2.63 package, but due to priorities, we only see the UEK libudev-147-2.51 version. So, the solution to this particular issue is to either:
+Remove the priority from the UEK3 repo using Puppet.
+Delete the libudev packages from our UEK3 repo.
+If there are newer versions of libudev in the public UEK3 repo, download the newer packages, and put them in our local UEK3 repo.
+

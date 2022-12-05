@@ -1,0 +1,388 @@
+# Crappy parallelization
+# http://superuser.com/questions/461432/get-exit-code-from-subshells-that-are-running-in-parallel
+{
+    (echo "starting b"; b)&
+    (echo "starting c"; c)&
+    (echo "starting d"; d)&
+    wait %1 && wait %2 && wait %3
+}&&
+
+# Adding a random delay to a command (in seconds)
+# This puts a random 120 second delay before your_command.
+sleep $(( RANDOM % 120 )); your_command;
+
+# How to print a specific section of a file
+# You can do this to only print the parts of the file after "coyote":
+sed -n -e '/coyote/,$p' $file
+# Or you can print a middle section like this:
+sed -n -e '/coyote/,/end of coyote/p' $file
+
+
+# How to mount a remote file system via SSH
+# Install SSHFS: 
+sudo yum install fuse-sshfs
+# Mount the directory (do not run as root): 
+mkdir remote_fs
+sshfs server:remote_fs -o idmap=user
+# Unmount the directory: 
+fusermount -u remote_fs
+
+How to find files that have been hidden under another mounted filesystem
+When you have a discrepancy in file space like this, one cause could be a file system that is mounted on top of a directory that already contains
+files. If there's a significant difference between du and df, you might have this issue: 
+[evans@server ~]$ df -Ph /var
+Filesystem Size Used Avail Use% Mounted on
+/dev/mapper/rootvg-var_lv 20G 16G 2.8G 86% /var
+[evans@server ~]$ sudo du -xcsh /var
+12G /var
+12G total
+[evans@sjc-mongo5 ~]$
+To find out where the missing space is, you can mount /var using the --bind option to a temporary directory, then look for all file systems mounted below /var and see whether or not their mount points are empty: 
+[evans@server ~]$ mkdir evanstemp
+[evans@server ~]$ sudo mount --bind /var evanstemp/
+
+
+Print only the string that you want
+This example uses Perl look-behind assertions to find fixed strings like 'command[stuff]', and print out only 'stuff': 
+grep -oP '(?<=command\[)([^]]+)(?=])' nrpe.cfg
+If you want to find something using regex instead of just a fixed string, sed works better: 
+sed -n -r 's/^[ \t]*class[ \t]+(.*)[\{\(\t]+/\1/p' '{}' \;
+Multiline search and replace in multiple documents
+grep -rIlZ 'duck' ~/seasons/*.html | xargs -0 --no-run-if-empty sed -i -r -n '1h;1!H;${g;s/duck/wabbit/g;p;}'
+
+Print a particular block of a YAML file
+This is essentially a multi-line grep. Very useful.
+http://backreference.org/2010/09/11/smart-ranges-in-awk/
+http://backreference.org/2010/02/10/idiomatic-awk/
+This would print all blocks that match "^java:":
+awk '/^[^ ]/{p=0} /^java:/{p=1} p' java_crud.yaml
+
+# netstat is deprecated, use ss instead
+ss -lpn | grep :22
+
+Find all running Tomcat processes of a certain version
+This will find and print the catalina.base for all running Tomcats of version 7.0.55: 
+ps -elF | grep apache-tomcat-7.0.55 | grep -oE 'catalina\.base=[^ ]+'
+
+Sort the lines of a file by length
+awk '{ print length(), $0 | "sort -n" }' $file
+
+Print only the username and full command
+ps can print lots of things with the -o command, but the full command is not one of them, as far as I'm aware...
+ps -elF | awk '{ORS=""; print $3 "\t"; for(i=17;i<NF;++i)print $i,""; ORS="\n"; print $NF;}'
+
+What are all the scheduled jobs on this server?
+for file in $(sudo find /etc/crontab /etc/anacrontab /etc/cron.d /var/spool/cron /var/spool/anacron /etc/cron.hourly /etc/cron.daily /etc/cron.weekly /etc/cron.monthly /var/spool/at -type f); do echo -e "==========\n${file}\n=========="; sudo sed -E '/^[ \t]*#/d;/^[ \t]*$/d;' $file; done | less
+
+Extract an RPM
+rpm="name_of_rpm.rpm"
+mkdir "${rpm}.dir"
+cd "${rpm}.dir"
+rpm2cpio "../$rpm" | cpio -idmv
+
+Pass options from a script to a command within the script safely
+In case you're adding some additional logic to an existing command, but you want to safely pass some options to the command directly. Here's an example:
+#!/bin/bash
+while getopts vf option; do
+    case $option in
+        v) rm_options+=(-v);;
+        f) rm_options+=(-x);;
+    esac
+done
+shift $(($OPTIND - 1))
+for file in "$@"; do
+    rm "${rm_options[@]}" ${file}
+done
+Using options and arguments in your script
+Do not use getopt (singular). It is bad for a variety of reasons. Use getopts instead.
+
+I always mess this up. Here's a thorough example:
+while getopts :ij:rRvh option; do
+    case $option in
+        i) i_func;;
+        j) j_arg=$OPTARG;;
+        r) rflag=true; small_r=true;;
+        R) rflag=true; big_r=true;;
+        v) v_func; other_func;;
+        h) usage; exit;;
+        \?) echo "Unknown option: -$OPTARG" >&2; exit 1;;
+        :) echo "Missing option argument for -$OPTARG" >&2; exit 1;;
+        *) echo "Unimplemented option: -$OPTARG" >&2; exit 1;;
+    esac
+done
+shift $(($OPTIND - 1))
+echo "$@"
+
+Tidy up your HTML
+tidy -m -i -w -c -omit -utf8 
+
+Get all the SSH keys
+#!/bin/bash
+set -euo pipefail
+PATH=/bin:/usr/bin
+cat <<TAC
+This will wipe out your existing ~/.ssh/known_hosts and replace it with one
+that's up to date as of today. This is not terribly secure, because if a
+server has been hijacked, this will wipe out it's old key and you won't get
+prompted about the server having a different key. However, this is very
+convenient, because you won't have to type yes a thousand times if you issue
+an ssh command to all servers. Ideally, we need to implement
+https://tools.ietf.org/html/rfc4255 to put our SSH keys in DNS.
+Anywho, do you want to go ahead and wipe out your existing known_hosts file? If
+so, type "delete it" and press Enter.
+TAC
+read response
+if [[ $response == 'delete it' ]]; then
+    echo "Generating a new known_hosts file..."
+    ssh-keyscan -f <(for fqdn in $(lssrv.sh all); do
+        ip=$(dig +short $fqdn A)
+        hostname=$(echo $fqdn | cut -d '.' -f 1)
+        if [[ $ip != '' ]]; then
+            echo "${fqdn},${hostname},${ip}"
+        fi
+        ip=''
+    done) > ~/.ssh/known_hosts
+fi
+
+Print fun red error messages!
+#!/bin/bash
+ 
+function err {
+    red='\033[0;31m'
+    normal='\033[0m'
+    printf "${red}ERROR: ${1}${normal}\n" >&2
+    exit 1
+}
+
+err 'You\'re drunk! Go home.'
+
+Wrapper script to send all output to syslog while still putting stderr on the console
+This is really good for wrapping cronjobs that have a MAILTO. All output from the wrapped script will go to syslog, so you can go look at it if you need to, but only STDERR goes to console, which is then sent to a MAILTO.
+#!/bin/bash
+your_script.sh 1> >(logger -t $(readlink -f $0)) 2> >(logger -s -t $(readlink -f $0))
+
+Unexpected command butchery due to misunderstood literals and shell-expansion
+I was building lots of find commands:
+find /var/log/thingy/logs -maxdepth 1 -type f -name 'goob.log.*' '!' -name '*.gz' '!' -name '*.bz2' -mtime +30 -print0
+find /var/log/differentthing/logs -maxdepth 1 -type f -name 'huh.log.*' '!' -name '*.gz' '!' -name '*.bz2' -mtime +30 -print0
+find /var/log/m0arstuff/logs -maxdepth 1 -type f -name 'blibblob.log.*' '!' -name '*.gz' '!' -name '*.bz2' -mtime +30 -print0
+and they have some repeating options, so I put them in a variable like this:
+gzip_exceptions=$'\'!\' -name \'*.gz\' \'!\' -name \'*.bz2\''
+find /var/log/thingy/logs -maxdepth 1 -type f -name 'goob.log.*' $gzip_exceptions -mtime +30 -print0
+find /var/log/differentthing/logs -maxdepth 1 -type f -name 'huh.log.*' $gzip_exceptions -mtime +30 -print0
+find /var/log/m0arstuff/logs -maxdepth 1 -type f -name 'blibblob.log.*' $gzip_exceptions -mtime +30 -print0
+The end result I wanted was something like:
+find . '!' -name '*.gz'
+That's it. Nothing else. No other quotes. Not find with shell expansion to list all *.gz files.
+And it didn't work! Really crazy things ensued! See below:
+#### Setting my shell to display all kinds of crap.
+evans@bastion:~/test> set -x
+++ echo -ne '\033]0;evans@bastion:~/test'
+
+#### Just listing files. There are two:
+evans@bastion:~/test> ls -l
++ ls --color=auto -l
+total 0
+-rw-r--r-- 1 evans users 0 Oct  9 19:28 test.log
+-rw-r--r-- 1 evans users 0 Oct  9 19:28 test.log.gz
+++ echo -ne '\033]0;evans@bastion:~/test'
+
+#### Setting x to what I believed to be a literal string equal to: '!' -name '*.gz'
+evans@bastion:~/test> x=$'\'!\' -name \'*.gz\''
+#### Looks like Bash added some unexpected single quotes for some reason...
++ x=''\''!'\'' -name '\''*.gz'\'''
+++ echo -ne '\033]0;evans@bastion:~/test'
+
+#### However, echoing the variable showed the string I wanted.
+evans@bastion:~/test> echo $x
++ echo ''\''!'\''' -name ''\''*.gz'\'''
+#### Looks good, right?
+'!' -name '*.gz'
+++ echo -ne '\033]0;evans@bastion:~/test'
+
+#### Fail, that + find command looks insane.
+evans@bastion:~/test> find . $x
++ find . ''\''!'\''' -name ''\''*.gz'\'''
+find: `\'!\'': No such file or directory
+++ echo -ne '\033]0;evans@bastion:~/test'
+
+#### Fail, putting the variable in double quotes trimmed a couple of single quotes out of the middle of the string...
+evans@bastion:~/test> find . "${x}"
++ find . ''\''!'\'' -name '\''*.gz'\'''
+.
+./test.log.gz
+./test.log
+find: `\'!\' -name \'*.gz\'': No such file or directory
+++ echo -ne '\033]0;evans@bastion:~/test'
+
+#### I found a comment on http://wiki.bash-hackers.org/syntax/quoting that mentioned using an array instead...
+evans@bastion:~/test> x=('!' -name '*.gz')
++ x=('!' -name '*.gz')
+++ echo -ne '\033]0;evans@bastion:~/test'
+
+#### This worked... NOT! The + find command shows that it expanded '*.gz' to test.log.gz! WTF!
+evans@bastion:~/test> find . ${x[@]}
++ find . '!' -name test.log.gz
+.
+./test.log
+++ echo -ne '\033]0;evans@bastion:~/test'
+
+#### Like the comment showed, the array has to also be enclosed in double quotes.
+evans@bastion:~/test> find . "${x[@]}"
++ find . '!' -name '*.gz'
+.
+./test.log
+++ echo -ne '\033]0;evans@bastion:~/test'
+evans@bastion:~/test>
+So, here's the final working code. I had to put the strings in an array and then call the array inside double quotes:
+gzip_exceptions=('!' -name '*.gz' '!' -name '*.bz2')
+find /var/log/thingy/logs -maxdepth 1 -type f -name 'goob.log.*' "${gzip_exceptions[@]}" -mtime +30 -print0
+find /var/log/differentthing/logs -maxdepth 1 -type f -name 'huh.log.*' "${gzip_exceptions[@]}" -mtime +30 -print0
+find /var/log/m0arstuff/logs -maxdepth 1 -type f -name 'blibblob.log.*' "${gzip_exceptions[@]}" -mtime +30 -print0
+
+Show the 20 largest files or directories on a single file system.
+sudo du -Sax --time / | sort -n | tail -n 20
+Delete non-open files older than 15 days in a specific directory.
+# Just show the files that you will be deleting.
+sudo tmpwatch -st -m 15d /var/directory_you_wanna_clean
+# Actually delete the files.
+sudo tmpwatch -sv -m 15d /var/directory_you_wanna_clean
+Show all the different types of log files in a directory.
+ls -1 /var/log/tomcat6/bbproxy/*.log* | egrep -o '[^/]*\.log' | sed -r 's/[0-9]{4}-[0-9]{2}-[0-9]{2}\./YYYY-MM-DD./' | sort -u
+
+Run a command on multiple servers
+You need to setup SSH key-based authentication for this to work.
+Here's an example using brace expansion to generate a list of servers. I put -n because of a weird problem once which I cannot explain. The -q and Strict... are just to shut everything up and give me the output I want.
+for server in server{0..9}; do
+    ssh -q -n -o StrictHostKeyChecking=no $server 'df -hP /var'
+done
+A more complex example that runs a script. I'm using a custom lssrv.sh script to generate the server list this time. I highly recommend using $'' quoting to protect the code you're sending through SSH. I also used 'sudo ssh' to run SSH as the root user because you can't pass interactive commands through SSH easily.
+for server in $(lssrv.sh -a rlp -e stg); do
+    sudo ssh -q -n -o StrictHostKeyChecking=no $server $'
+        find /var/log/jetty -maxdepth 1 -type f \! -name \'*.gz\' -exec sh -c \'
+            fuser -s "$0"; fuser_exit=$?;
+            if [[ $fuser_exit == 1 ]]; then
+                gzip -v "$0"
+            elif [[ $fuser_exit == 0 ]]; then
+                echo "WARNING: Skipping $0, file is open."
+            else
+                echo "WARNING: Skipping $0, fuser exit code was ${fuser_exit}."
+            fi
+        \' {} \;
+    '
+done
+Here's an attempt to run a command in parallel using a little bit of rate-limiting. Note the "&" at the end of the SSH command to execute it in the background - much faster than serial execution. The output can get pretty gnarly though...
+for server in $(lssrv.sh -e stg); do
+    ssh -q -n -o StrictHostKeyChecking=no $server 'echo -n $(hostname); grep "[[:space:]]*server[[:space:]]*=" /etc/puppet/puppet.conf' &
+    joblist=($(jobs -p))
+    while (( ${#joblist[*]} > 9 )); do
+        sleep 1
+        joblist=($(jobs -p))
+    done
+done
+echo "Done. Press Enter."
+When you want to run things in parallel, it's easier to start using something like pdsh (pronounced "puh-doosh") or pssh. Here are some simple examples:
+pssh -i -h <(lssrv.sh -e stg) -p 13 -t 30 -O StrictHostKeyChecking=no 'echo hi'
+ 
+sudo pssh -i -h <(lssrv.sh -e stg) -p 13 -t 30 -O StrictHostKeyChecking=no 'tail -n 1 /var/log/messages'
+Run a command only if the file is not open
+This has to be run as root due to fuser.
+
+fuser -s "${file}"; fuser_exit=$?;
+if [[ $fuser_exit == 1 ]]; then
+    gzip -v "${file}"
+elif [[ $fuser_exit == 0 ]]; then
+    echo "WARNING: Skipping ${file}, file is open."
+else
+    echo "WARNING: Skipping ${file}, fuser exit code was ${fuser_exit}."
+fi
+
+# Forward local ports to remote servers:ports.
+ssh -L 5001:192.168.1.2:5001 -L 5002:127.0.0.1:5001 192.168.1.2
+
+########################################
+.bashrc stuff
+
+alias nocomment=$'sed -r \'/^[ \t]*(#|;)/d;/^[ \t]*$/d;\''
+##########################################
+
+###############################
+.bash_profile stuff
+
+# Enable ssh-agent to persist through disconnects and screen.
+if [[ "$HOSTNAME" =~ ^bastion ]]; then
+    if [[ $(pgrep -u $USER ssh-agent) == '' ]]; then
+        eval $(ssh-agent -s)
+        ln -fs $(echo $SSH_AUTH_SOCK | cut -d= -f 2) ~/.SSH_AUTH_SOCK
+    fi
+    export SSH_AUTH_SOCK=~/.SSH_AUTH_SOCK
+    if [[ $(ssh-add -l) == 'The agent has no identities.' ]]; then
+      ssh-add
+    fi
+fi
+
+# Better Bash History
+# Put this in your .bash_profile, not your .bashrc, otherwise you may get unexpected results: http://superuser.com/questions/575479/bash-history-truncated-to-500-lines-on-each-login
+# Make HIST*SIZE unlimited by setting them to a non-numeric string.
+export HISTFILESIZE=''
+export HISTSIZE=''
+export HISTTIMEFORMAT="%s "
+# Since our home directories are on an NFS export, our .bash_history gets concurrent updates. I prefer to have per-hostname history, so when I log into some server 6 months later, I can press the up arrow and see the last command I ran on it. When we get a Puppet fact for role on all servers, I'll convert this to use the role fact instead of the hostname, so we'll have histories based on roles, which would be even better.
+mkdir -p "${HOME}/.bash_histories"
+export HISTFILE="${HOME}/.bash_histories/${HOSTNAME}" # Per hostname history
+#export HISTFILE="${HOME}/.bash_histories/$(facter -p pp_role)" # Per role history (untested)
+# Creating a non-empty history file, because history -a doesn't work if there is no file or an empty file.
+if [[ ! -f $HISTFILE ]]; then
+    echo -e "#1\nstart of history" > $HISTFILE
+    chmod 600 "${HISTFILE}"
+fi
+# Force prompt to write history after every command: http://superuser.com/questions/20900/bash-history-loss
+export PROMPT_COMMAND="history -a; ${PROMPT_COMMAND}"
+shopt -s histappend
+
+###################################################
+
+# Parallel processing with xargs
+ls -1 | xargs -P 4 -I {} bash -c "echo {}; sleep 1;"
+
+smbclient //samba.evanstucker.com/users -D ${USER} -U ${USER} -W WORKGROUP
+
+# Hacky way to generate new users:
+for new_user in evans duder thatguy homenugget; do
+    if [[ $new_user == 'evans' ]]; then
+        echo "Set ${new_user}'s Samba password:"
+        smbpasswd -a $new_user
+    else
+        uiohef=$(pwqgen)
+        echo $uiohef | passwd --stdin $new_user
+        echo -e "${uiohef}\n${uiohef}" | smbpasswd -a $new_user -s
+        # This could be improved to expire the account and e-mail this
+        # temporary password to the user. Also, not sure how to keep
+        # Samba and normal passwords in sync... I think passwd does
+        # that. Need to test.
+        unset uiohef
+    fi
+    usermod -aG users $new_user
+done
+
+Getting TLD and second level domain from a FQDN:
+$ echo 'example.com' | grep -oE '(\w+\.\w+)$' | cut -d. -f1
+example
+$ echo 'example.com' | grep -oE '(\w+\.\w+)$' | cut -d. -f2
+com
+$ echo 'third.example.com' | grep -oE '(\w+\.\w+)$' | cut -d. -f1
+example
+$ echo 'third.example.com' | grep -oE '(\w+\.\w+)$' | cut -d. -f2
+com
+
+# Automatically retries a command until it succeeds.
+# Usage: auto-retry command
+# Example: auto-retry ssh pdxnpsensu02 $'uptime | grep -q \'up [0-9] mins\'' 
+# For complex commands wrap them in bash like this:
+# Example: auto-retry bash -c 'curl http://google.com | grep -q moved'
+function auto-retry {
+  while true; do
+    "$@" && break
+    sleep 3
+  done
+}

@@ -1,0 +1,2 @@
+# What is the effective URL of a website after all the redirects happen?
+curl -w "%{url_effective}\n" -I -L -s -S $URL -o /dev/null

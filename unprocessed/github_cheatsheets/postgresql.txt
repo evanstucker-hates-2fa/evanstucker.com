@@ -1,0 +1,17 @@
+# List databases
+sudo -u postgres psql -l
+
+# Connect to a database (e.g. rundeck)
+sudo -u postgres psql rundeck
+
+# Quit psql
+\q
+
+# List tables
+\dt
+
+# Describe table
+\d+ example_table
+
+# Make output verticle instead of horizonal (similar to MySQL \G)
+\x

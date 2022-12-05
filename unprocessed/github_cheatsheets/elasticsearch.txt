@@ -1,0 +1,14 @@
+curl -s -X POST http://$(hostname):9200/_all/_flush?pretty
+curl -s -X POST http://$(hostname):9200/_cluster/reroute -d '{"commands":[{"allocate_replica":{"index":"logstash-2016.05.13","shard":"6","node":"pdxprlogets01-logstash-1"}}]}' | jq .
+curl -s -X POST http://$(hostname):9200/_flush/synced
+curl -s -X POST http://$(hostname):9200/_flush/synced?pretty
+curl -s -X POST http://$(hostname):9200/_cluster/nodes/_local/_shutdown | jq .
+curl -s http://$(hostname):9200/_cat/health
+curl -s http://$(hostname):9200/_cat/recovery?v
+curl -s http://$(hostname):9200/_cat/shards?h=index,shard,prirep,state,unassigned.reason | grep UNASSIGNED
+curl -s http://$(hostname):9200/_cluster/allocation/explain | jq . | grep explanation
+curl -s http://$(hostname):9200/_cluster/reroute?retry_failed=true | jq .
+curl -s http://$(hostname):9200/_recovery?human
+curl -s http://$(hostname):9200/_recovery?human&active_only=true | jq . 
+curl -s http://$(hostname):9200/_recovery?human&active_only=true | jq . | less -R
+curl -s http://localhost:9200/_cluster/allocation/explain

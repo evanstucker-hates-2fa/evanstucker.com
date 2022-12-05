@@ -1,0 +1,17 @@
+Salt
+https://docs.saltstack.com/en/latest/topics/tutorials/walkthrough.html
+
+evans@server:~> sudo salt server.example.com test.ping
+ 
+salt 'logstash1*' grains.get productname
+ 
+salt -G 'os:Fedora' test.ping
+ 
+# List
+sudo salt -L 'server1.example.com,server2.example.com' cmd.run 'echo evans rules'
+# Regex
+sudo salt -E 'server(enva|envb)' cmd.run 'echo bypass that 2fa'
+# With lssrv.sh
+sudo salt -L "csv list of serers" cmd.run 'echo this is the new for server loop'
+ 
+sudo salt -L "newline list of server" --out=txt cmd.run $'rpm -q glibc.x86_64 | grep -v \'glibc-2.12-1.166\''

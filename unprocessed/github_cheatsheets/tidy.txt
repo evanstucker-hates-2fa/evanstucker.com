@@ -1,0 +1,1 @@
+tidy -asxhtml -utf8 -b -c -w -o out.html in.html

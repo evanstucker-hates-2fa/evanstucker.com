@@ -1,0 +1,4 @@
+# Don't remember why I did this.
+shell -$SHELL
+# Fix mouse scrolling in screen terminal?
+termcapinfo xterm* ti@:te@

@@ -1,0 +1,11 @@
+Unicode
+https://en.wikipedia.org/wiki/Unicode_input
+To enter Unicode characters in Linux, type Control-Shift-u followed by the 4 digit hexadecimal code for that character, then hit Enter.
+The list of all characters can be found here:
+http://www.unicode.org/Public/UCD/latest/ucd/Index.txt
+And descriptions are available on Wikipedia:
+http://en.wikipedia.org/wiki/List_of_Unicode_characters
+Here are some useful characters:
+001f Unit Separator
+001e Record Separator
+
