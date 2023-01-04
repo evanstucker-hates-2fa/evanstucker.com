@@ -20,15 +20,14 @@ hugo server
 # Build it
 hugo
 
-# Authenticate to Radicle
+# Authenticate, commit, and push
 rad auth
-
-# Commit it
 git commit -am ...
 git push
+rad push
 
 # Copy it to the server
-rsync -Prv public/ 192.168.1.114:/srv/docker/ipfs/ipfs_fuse/
+rsync -Prv --del --stats public/ 192.168.1.114:/srv/docker/ipfs/ipfs_fuse/
 
 # Connect to the IPFS container on the server
 ssh 192.168.1.114
