@@ -23,7 +23,6 @@ hugo
 # Authenticate, commit, and push
 rad auth
 git commit -am ...
-git push
 rad push
 
 # Copy it to the server
