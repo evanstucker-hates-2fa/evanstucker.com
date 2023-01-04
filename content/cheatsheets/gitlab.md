@@ -1,34 +1,35 @@
-# Gitlab
-
+---
+title: "GitLab"
+draft: false
+---
 ## Prerequisites
 
 1. Log into gitlab.com.
 1. Create a personal access token with "api" scope.
 1. Create an env var for the token:
    ```bash
-   export token=4wpNGREDACTED798tF
+   export token=REDACTED
    ```
 
-## Cheatsheet
-
-* List all groups:
+## List all groups:
 
 ```bash
 curl -H "Private-Token: $token" -s https://gitlab.com/api/v4/groups?owned=true | jq .
 ```
 
-* List all members of a group:
+## List all members of a group:
+
 ```bash
 curl -H "Private-Token: $token" -s https://gitlab.com/api/v4/groups/4934010/members
 ```
 
-* List all projects in a group:
+## List all projects in a group:
 
 ```bash
 curl -H "Private-Token: $token" -s https://gitlab.com/api/v4/groups/4934010/projects | jq .
 ```
 
-* List all project deploy keys for a specific group:
+## List all project deploy keys for a specific group:
 
 ```bash
 for p in $(curl -H "Private-Token: $token" -s https://gitlab.com/api/v4/groups/4934010/projects | jq .[].id); do
@@ -37,7 +38,7 @@ for p in $(curl -H "Private-Token: $token" -s https://gitlab.com/api/v4/groups/4
 done
 ```
 
-* Delete deploy keys for a specific group:
+## Delete deploy keys for a specific group:
 
 ```bash
 for p in $(curl -H "Private-Token: $token" -s https://gitlab.com/api/v4/groups/4934010/projects | jq .[].id); do
@@ -48,13 +49,13 @@ for p in $(curl -H "Private-Token: $token" -s https://gitlab.com/api/v4/groups/4
 done
 ```
 
-* List all runners:
+## List all runners:
 
 ```bash
 curl -H "Private-Token: $token" -s https://gitlab.com/api/v4/runners | jq .
 ```
 
-* Delete offline runners:
+## Delete offline runners:
 
 ```bash
 for r in $(curl -H "Private-Token: $token" -s https://gitlab.com/api/v4/runners?status=offline | jq .[].id); do
@@ -62,7 +63,7 @@ for r in $(curl -H "Private-Token: $token" -s https://gitlab.com/api/v4/runners?
 done
 ```
 
-* List all runners for all projects in a specific group:
+## List all runners for all projects in a specific group:
 
 ```bash
 for p in $(curl -H "Private-Token: $token" -s https://gitlab.com/api/v4/groups/4934010/projects | jq .[].id); do
@@ -71,7 +72,7 @@ for p in $(curl -H "Private-Token: $token" -s https://gitlab.com/api/v4/groups/4
 done
 ```
 
-* BROKEN: Disable all shared runners:
+## BROKEN: Disable all shared runners:
 
 ```bash
 for p in $(curl -H "Private-Token: $token" -s https://gitlab.com/api/v4/groups/4934010/projects | jq .[].id); do

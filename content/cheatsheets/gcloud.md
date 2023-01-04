@@ -1,5 +1,7 @@
-# Google Cloud
-
+---
+title: "Google Cloud Platform (GCP)"
+draft: false
+---
 ## Delete old snapshots
 
 ```bash

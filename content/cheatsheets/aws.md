@@ -1,4 +1,9 @@
-# AWS
+---
+title: "Amazon Web Services (AWS)"
+draft: false
+---
+
+## Miscellaneous
 
 ```bash
 export AWS_PROFILE=your_AWS_profile
@@ -18,24 +23,27 @@ for ssm_param in $(aws ssm describe-parameters | jq -r .Parameters[].Name); do
 done
 ```
 
-# Get all secrets for a particular environment
+## Get all AWS Secrets Manager secrets for a particular environment
 
-aws ssm get-parameters-by-path --path "/Services/pizza-backend" --recursive --with-decryption > karate_secrets.json
-aws ssm get-parameters-by-path --path "/Services/pizza-blockchain" --recursive --with-decryption > karate_blockchain_secrets.json
-
-
-# Find unencrypted Kubernetes PVC volumes
-```
-for region in us-east-2 eu-west-3 ap-southeast-2; do echo "# Region: ${region}"; aws ec2 describe-volumes --region $region | jq '.Volumes[] | select(.Encrypted==false) | .Tags[]? | select(.Key=="kubernetes.io/created-for/pvc/name") | .Value'; done
+```bash
+aws ssm get-parameters-by-path --path "/Services/pizza" --recursive --with-decryption > pizza_secrets.json
 ```
 
-# List all AWS SSO Roles
+## Find unencrypted Kubernetes PVC volumes
+
+```bash
+aws ec2 describe-volumes --region us-east-2 | jq '.Volumes[] | select(.Encrypted==false) | .Tags[]? | select(.Key=="kubernetes.io/created-for/pvc/name") | .Value'
 ```
+
+## List all AWS SSO Roles
+
+```bash
 aws iam list-roles | jq -r '.Roles[] | select(.RoleName|test("AWSReservedSSO")) | .Arn'
 ```
 
-# Delete snapshots older than 3 months
-```
+## Delete snapshots older than 3 months
+
+```bash
 export aws_account_number=999999999999
 export AWS_PROFILE=your_profile_name
 export AWS_DEFAULT_REGION=us-east-1

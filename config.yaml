@@ -50,6 +50,9 @@ menu:
     - identifier: categories
       name: categories
       url: /categories/
+    - identifier: cheatsheets
+      name: cheatsheets
+      url: /cheatsheets/
     - identifier: lists
       name: lists
       url: /lists/

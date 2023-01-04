@@ -1,10 +1,15 @@
-# Elasticsearch
-
+---
+title: "Elastic Stack"
+draft: false
+---
 ## Using Cerebro
 
-Start Cerebro on your workstation:
+I haven't done any heavy Elastic Stack administration lately. I don't think Cerebro is popular tool anymore. I think most of the info you'd want is available somewhere in Kibana these days...
 
-    docker run -d -p 9000:9000 --name cerebro lmenezes/cerebro
+Start Cerebro on your workstation:
+```bash
+docker run -d -p 9000:9000 --name cerebro lmenezes/cerebro
+```
 
 Open http://localhost:9000.
 
@@ -13,10 +18,11 @@ Then connect to http://your_elasticsearch_server:9200
 ## Why are my shards unallocated?!?
 
 https://www.datadoghq.com/blog/elasticsearch-unassigned-shards/
+```bash
+curl -XGET localhost:9200/_cluster/allocation/explain?pretty
+```
 
-    curl -XGET localhost:9200/_cluster/allocation/explain?pretty
-
-# Updating indices
+## Updating indices
 
 https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-update-settings.html
 
@@ -37,8 +43,9 @@ PUT _template/all
 }
 ```
 
-# Plugins
+## Plugins
 
+```bash
 elasticsearch-plugin list
-
 curl http://localhost:9200/_cluster/state?pretty=true
+```
