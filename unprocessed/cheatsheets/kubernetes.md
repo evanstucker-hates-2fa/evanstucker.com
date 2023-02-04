@@ -259,3 +259,21 @@ for c in $(kubectl config get-contexts -o name); do
   k get ns
 done
 ```
+
+# How to update all codefi/generic-app Helm chart versions in a helmfile
+# Requires https://github.com/mikefarah/yq/#install
+yq eval -i '(.releases[]|select(.chart=="codefi/generic-app")|.version) = "3.7.3"' helmfile.yaml
+
+kubectl patch deploy elasticsearch-master -p '{"spec":{"template":{"spec":{"containers":[{"name":"elasticsearch","resources":{"limits":{"memory":"1024Mi"},"requests":{"memory":"512Mi"}}}]}}}}'
+
+for pod in $(devkubectl get pods --no-headers | awk '{print $1}'); do
+echo "===== $pod"
+devkubectl get pod $pod -o go-template='{{range.status.containerStatuses}}{{"LastState: "}}{{.lastState}}{{end}}{{"\n"}}' | grep -oiE 'reason:[a-z0-9]+'
+done
+
+for node in $(kubectl get nodes --no-headers | awk '{print $1}'); do echo "===== $node"; kubectl describe node $node | grep Allocated -A 5 | grep -ve Event -ve Allocated -ve percent -ve -- ; echo; done
+
+ssh-add ~/.ssh/*.pem
+export env=dev
+export command='grep -i oom /var/log/*/current'
+for node in $(kubectl --kubeconfig="${HOME}/.kube/config-${env}" get nodes -o json | jq -r '.items[].metadata.name'); do ssh -J ubuntu@bastion.${env}.balanc3.net -q -o StrictHostKeyChecking=no ubuntu@$node -- $command; done

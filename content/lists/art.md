@@ -19,9 +19,11 @@ Artists
 - [Nobe](http://nobeart.com/) has delightful sculptures - some are whimsical, some have a really unique style, all were great.
 - [Patrick DeAngelis](https://www.patrickdeangelisart.com/) surprises me. I don't like Rothko, and DeAngelis appears to have gone done a similar path, but where Rothko fell flat, DeAngelis has creating mesmerizing fields of soft color and light.
 - [Paul Signac](https://en.wikipedia.org/wiki/Paul_Signac) - a French Neo-Impressionist painter who, working with Georges Seurat, helped develop the Pointillist style.
+- [Rayform](https://rayform.ch/) makes really interesting sculptures with light by using a computer algorithm to calculate caustics.
 - [Raymond Francis John](https://raymondfrancisjohn.com/) creates colorful, alluring digital designs.
 - [Tali Lopez](https://talilopez.com/) draws freaky little people with lovely and/or irreverent messages, haha.
 - [Tessa Nicole Art](https://www.tessanicoleart.com/) - San Diego artist with a "textured pointillism" style. This was my favorite artist at the 2022 ArtWalk in Carlsbad.
+- [Tommy Siegel](https://tommysiegel.net/) likes to draw Extremely Accurate Birds with human legs and butts. Weird. I love it.
 - [Yves Goyatton](https://www.yvesgoyatton.com/) has some interesting sculpture - mostly truncated figures with brutalist elements or transparent sections.
 
 Galleries

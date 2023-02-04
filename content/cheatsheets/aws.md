@@ -44,16 +44,22 @@ aws iam list-roles | jq -r '.Roles[] | select(.RoleName|test("AWSReservedSSO")) 
 ## Delete snapshots older than 3 months
 
 ```bash
-export aws_account_number=999999999999
+export account_id=$(aws sts get-caller-identity --output json | jq -r .Account)
 export AWS_PROFILE=your_profile_name
 export AWS_DEFAULT_REGION=us-east-1
 export temp_dir=/tmp/delete_snapshots
+
+#aws ec2 describe-snapshots --owner-ids $account_id | jq -r '.Snapshots[] | .VolumeId,.SnapshotId'
+#aws ec2 describe-volumes | jq -r '.Volumes[] | .VolumeId'
+#aws ec2 describe-volumes | jq '.Volumes[] | select(.Tags[].Value == "*mongo*")'
+#aws ec2 describe-snapshots --filters 'Name=status,Values=pending'
+#aws ec2 describe-volumes --filters 'Name=tag:Name,Values=*mongo*' --query 'Volumes[*].VolumeId'
 
 for region in $(aws ec2 describe-regions | jq -r .Regions[].RegionName); do
   export AWS_REGION="${region}"
   aws ec2 describe-volumes > "${temp_dir}/volumes-${region}.json"
   cat "${temp_dir}/volumes-${region}.json" | jq -r '.Volumes[] | .VolumeId' > "${temp_dir}/volume-ids-${region}.txt"
-  aws ec2 describe-snapshots --owner-ids $aws_account_number > "${temp_dir}/snapshots-${region}.json"
+  aws ec2 describe-snapshots --owner-ids $account_id > "${temp_dir}/snapshots-${region}.json"
   cat "${temp_dir}/snapshots-${region}.json" | jq -cr '.Snapshots[] | [ .VolumeId, .StartTime, .SnapshotId ]' > "${temp_dir}/snapshots-${region}.txt"
   while read snapshot; do
     volume_id=$(echo $snapshot | cut -d\" -f 2)
