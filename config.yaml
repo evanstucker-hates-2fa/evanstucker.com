@@ -59,6 +59,9 @@ menu:
     - identifier: posts
       name: posts
       url: /posts/
+    - identifier: pay
+      name: pay
+      url: /pay/
 
     # I don't think I need this yet.
     #- identifier: tags
