@@ -1,4 +1,0 @@
-This was working at one point, but my commits are showing up as signed anymore. Checking...
-trying more crap
-Ah, looks like it was using the Radicle SSH key to sign commits... that's probably the issue. Adding that key to gitlab and codeberg.
-gain
