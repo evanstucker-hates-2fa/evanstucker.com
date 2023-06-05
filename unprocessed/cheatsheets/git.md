@@ -163,3 +163,9 @@ for d in $(find gitlab.com -type d -name .git); do
     echo "$repo"
   fi
 done
+
+## Get default branch
+https://stackoverflow.com/questions/28666357/how-to-get-default-git-branch
+```
+git remote show [your_remote] | sed -n '/HEAD branch/s/.*: //p'
+```
