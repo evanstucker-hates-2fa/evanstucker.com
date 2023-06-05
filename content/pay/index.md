@@ -12,6 +12,7 @@ I accept payment via a variety of services.
 | PayPal   | ❌         | ❌                | ❌              | [evanstucker](https://paypal.me/evanstucker)    |
 | Venmo    | ❌         | ❌                | ❌              | [@evanstucker](https://venmo.com/u/evanstucker) |
 | ZCash    | ✅         | ✅                | ✅              | u18axelax3gz9yq23dxgupx59e4398uwt7rhq5tudwxu9amasd53v56c9u6c9lgj7uw0quy0dy3xm4jkgygf75dh6ur6qurd6vz5we5ag5edxtzgkzxz4zkvnhmpt4de3k9qncnky8psxwu8jcpvzh5vlm2pusljq9ycka5p8mmnrdxcfw3296hhkpz8rljzyxlqdlus6e4w3px8w6flx | 
+| Zelle    | ❌         | ❌                | Kinda           |                                                 |
 
 Ethereum
 I'll accept any tokens on any EVM compatible chain or L2 as long as it has liquidity and can be bridged to mainnet.
