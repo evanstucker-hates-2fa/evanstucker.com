@@ -1,5 +1,6 @@
 [
   {"title":"12 Monkeys","review":"👎"},
+  {"title":"Beef","review":"👎"},
   {"title":"13th","comments":"Netflix series recommended by Jake"},
   {"title":"Adventure Time","review":"👍"},
   {"title":"Altered Carbon","review":"👎"},
@@ -16,6 +17,7 @@
   {"title":"Baskets","comments":"Zach Galifianakis"},
   {"title":"Battlestar Galactica (2004)","review":"👍"},
   {"title":"Beavis and Butt-head","review":"👍"},
+  {"title":"Mike Judge's Beavis and Butt-head","review":"👍"},
   {"title":"Berserk","comments":"anime"},
   {"title":"Bill Nye Saves the World"},
   {"title":"Black Mirror","review":"👍","comments":"It took me a long time to give this show a second chance after that awful first episode, but it turned out to be an amazing show overall!"},
@@ -54,7 +56,7 @@
   {"title":"Gravity Falls","review":"👍"},
   {"title":"History of the World: Part II","review":"👍"},
   {"title":"Invader Zim","review":"👍"},
-  {"title":"Invasion","comments":"Apple TV"},
+  {"title":"Invasion","review":"👎"},
   {"title":"Jackass"},
   {"title":"Jane the Virgin","review":"👍"},
   {"title":"Key and Peele"},
