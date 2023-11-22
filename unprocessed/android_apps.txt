@@ -1,0 +1,72 @@
+aegis
+antennapod
+arlo
+bandcamp
+binary eye
+bitwarden
+blink charging
+brave
+cash app
+cloudlibrary
+connectbot
+conversations
+davx5
+discord
+edge wallet
+f-droid
+facebook lite
+family link
+firefox
+gamechanger
+gmail
+google fi
+google maps
+icsx5
+instagram
+jitsi meet
+keybase
+ledger live
+libreoffice viewer
+linkedin
+manyverse
+meetup
+metamask
+mullvad vpn
+nextcloud
+nextdoor
+openkeychain
+opensignal
+parkmobile
+passport parking
+paypal
+phyphox
+plugshare
+pronto
+proton mail
+qksms
+scrambled exif
+signal
+simple calendar pro (no longer needed in LineageOS?)
+simple contacts pro (no longer needed in LineageOS?)
+simple draw
+simple file manager
+simple gallery
+simple voice recorder
+slack
+soundcloud
+spedn
+spotify
+syncthing
+tasks
+telegram
+tesla
+translate
+tuner
+uber
+usaa
+venmo
+whisk
+wifi analyzer
+wikipedia
+youtube
+zoom
