@@ -1,4 +1,6 @@
 [
+  {"title":"Dream Scenario"},
+  {"title":"The Big Year","notes":"About birdwatch? Recommended by Marisol."},
   {"title":"Teenage Mutant Ninja Turtles: Mutant Mayhem","review":"👍"},
   {"title":"Step Brothers","review":"👍"},
   {"title":"12 Monkeys","review":"👍"},
@@ -292,7 +294,8 @@
   {"title":"Ready Player One","review":"👍"},
   {"title":"Real Genius","review":"👍"},
   {"title":"Rejected","review":"👍"},
-  {"title":"Renfield"},
+  {"title":"Renfield","review":"👍"},
+  {"title":"Jurassic Park","review":"👍","notes":"It's a UNIX system! I know this!"},
   {"title":"Return to Oz"},
   {"title":"Riftworld Chronicles","review":"👍","notes":"http://riftworldchronicles.com/"},
   {"title":"Robin Hood: Men in Tights","review":"👎"},
