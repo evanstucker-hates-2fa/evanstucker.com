@@ -1,4 +1,5 @@
 [
+  {"title":"Bee and Puppycat"},
   {"title":"Ahsoka","review":"👎"},
   {"title":"Scavengers Reign (2023)","imdb":"https://www.imdb.com/title/tt21056886/?ref_=nv_sr_srsg_0_tt_8_nm_0_q_scaven"},
   {"title":"The Afterparty (2022)","imdb":"https://www.imdb.com/title/tt12614214/?ref_=nv_sr_srsg_0_tt_8_nm_0_q_the%2520afterparty","review":"👍"},
@@ -175,6 +176,8 @@
   {"title":"This Giant Beast That is the Global Economy"},
   {"title":"Tim & Eric Awesome Show"},
   {"title":"Trigun","review":"👍"},
+  {"title":"Trigun Stampede"},
+  {"title":"Regular Show"},
   {"title":"Unbreakable Kimmy Schmidt","review":"👍","notes":"Either ridiculously funny, or just kind of weird. On the fence."},
   {"title":"Upload","review":"👍"},
   {"title":"WandaVision","review":"👎"},
