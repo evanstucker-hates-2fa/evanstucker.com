@@ -277,3 +277,24 @@ ssh-add ~/.ssh/*.pem
 export env=dev
 export command='grep -i oom /var/log/*/current'
 for node in $(kubectl --kubeconfig="${HOME}/.kube/config-${env}" get nodes -o json | jq -r '.items[].metadata.name'); do ssh -J ubuntu@bastion.${env}.balanc3.net -q -o StrictHostKeyChecking=no ubuntu@$node -- $command; done
+
+### Get all nodes in a nodegroup
+```
+nodegroup=whatever
+kubectl get nodes -o json | jq -r ".items[] | select(.metadata.labels.\"eks.amazonaws.com/nodegroup\" == \"${nodegroup}\") | .metadata.name"
+```
+
+### Drain and terminate all nodes
+```
+kubectl config use-context my_cluster
+
+export AWS_PROFILE=my_profile
+
+for node in $(kubectl get nodes -o name); do
+  kubectl drain --delete-emptydir-data --ignore-daemonsets "$node"
+  provider_id=$(kubectl get "$node" -o jsonpath='{.spec.providerID}')
+  region=$(echo "$provider_id" | cut -d'/' -f 4 | sed 's/[a-z]$//')
+  instance_id=$(echo "$provider_id" | cut -d'/' -f 5)
+  aws ec2 terminate-instances --region "$region" --instance-ids "$instance_id"
+done
+```
