@@ -1,5 +1,4 @@
-author:
-  name: Evans Tucker
+params.author.name: Evans Tucker
 
 # We have to set baseURL to '' so that all links are relative (ie.
 # "/posts/new-mobile-phone-plan" instead of
