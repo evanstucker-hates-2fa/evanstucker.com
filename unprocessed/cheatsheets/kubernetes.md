@@ -298,3 +298,11 @@ for node in $(kubectl get nodes -o name); do
   aws ec2 terminate-instances --region "$region" --instance-ids "$instance_id"
 done
 ```
+
+```
+# Shut everything down!
+kubectl scale --replicas=0 deployment --all
+
+# Nice restart as compared to just deleting pods.
+kubectl rollout restart sts
+```
