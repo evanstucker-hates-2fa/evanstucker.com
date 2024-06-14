@@ -16,6 +16,7 @@ Artists
 - [Lee Hendrickson](https://photographyofcrystals.com/) takes amazing photographs of microscopic crystals.
 - [Lisa Bryson](https://lbryson.com/) has fascinating portraits - despite their rough appearance they seem to convey an amazing amount of detail. The style is really appealing to me. I kind of wish I could commission a family portrait by her...
 - [Margaret L. Gonzales](https://www.bluepearlartstudio.com/) has some beautiful ocean scenes with neon colors.
+- [Nat Reed](https://natreed.com/) creates colorful, retro, mid-century modern scenes. They're like caricatures of Palm Springs, CA, which is where he resides.
 - [Nobe](http://nobeart.com/) has delightful sculptures - some are whimsical, some have a really unique style, all were great.
 - [Patrick DeAngelis](https://www.patrickdeangelisart.com/) surprises me. I don't like Rothko, and DeAngelis appears to have gone done a similar path, but where Rothko fell flat, DeAngelis has creating mesmerizing fields of soft color and light.
 - [Paul Signac](https://en.wikipedia.org/wiki/Paul_Signac) - a French Neo-Impressionist painter who, working with Georges Seurat, helped develop the Pointillist style.
