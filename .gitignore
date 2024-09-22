@@ -1,2 +1,3 @@
 public/
 .gitsigners
+.pre-commit-config.yaml

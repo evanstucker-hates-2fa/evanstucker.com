@@ -15,3 +15,15 @@ sudo -u postgres psql rundeck
 
 # Make output verticle instead of horizonal (similar to MySQL \G)
 \x
+
+# Show users
+\du
+
+# Show default privileges
+\ddp
+
+# Show privileges
+\dp
+
+# Show databases
+\l
