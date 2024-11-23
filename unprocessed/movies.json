@@ -3,250 +3,252 @@
     "title": "Flow"
   },
   {
-    "review": "👍",
+    "rating": "★★★☆☆",
     "title": "Self Reliance"
   },
   {
-    "notes": "Look at me, I am the captain now",
+    "review": "Look at me, I am the captain now",
     "title": "Captain Phillips"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Uglies"
   },
   {
     "title": "Bookworm"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "12 Monkeys"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "8-bit Christmas"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "A Bug's Life"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "A Christmas Story"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "A Serious Man"
   },
   {
-    "notes": "Corbin loved the crap out of this movie.",
-    "review": "👍",
+    "binary_rating": "👍",
+    "review": "Corbin loved the crap out of this movie.",
     "title": "A Turtle's Tale: Sammy's Adventures"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "A Wrinkle in Time"
   },
   {
     "title": "Adaptation"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Adult Swim Yule Log"
   },
   {
     "title": "Airplane!"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Aladdin"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Alice in Wonderland"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Alita battle angel"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "All is Lost"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Altered Carbon: Resleeved"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Amelie"
   },
   {
-    "notes": "So bad that I barely made it past the exposition.",
-    "review": "👎",
+    "binary_rating": "👎",
+    "review": "So bad that I barely made it past the exposition.",
     "title": "America: The Motion Picture"
   },
   {
-    "notes": "decent. not amazing.",
-    "review": "👎",
+    "binary_rating": "👎",
+    "review": "decent. not amazing.",
     "title": "American Ultra"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Anon"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Ant-Man and the Wasp"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Ant-Man"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Arrival"
   },
   {
-    "notes": "Really similar to the original movies, but I'm just not that into it.",
-    "review": "👎",
+    "binary_rating": "👎",
+    "review": "Really similar to the original movies, but I'm just not that into it.",
     "title": "Ash vs. Evil Dead"
   },
   {
     "title": "Baby Driver"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Back to the Future Part II"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Back to the Future"
   },
   {
-    "notes": "Crossdessing kid trolling the pagent at the end was amazing, but overall, not worth it.",
-    "review": "👎",
+    "binary_rating": "👎",
+    "review": "Crossdessing kid trolling the pagent at the end was amazing, but overall, not worth it.",
     "title": "Bad Grandpa"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Bad Moms"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Baraka"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Barbie"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Barton Fink"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Battlestar Galactica: The Complete Series"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Baywatch"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Beach Bum"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Beavis and Butt-head Do America"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Beavis and Butt-head Do The Universe"
   },
   {
     "title": "Beetlejuice Beetlejuice (2024)"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Beetlejuice"
   },
   {
     "title": "Being John Malkovich"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Beverly Hills Cop: Axel F"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Big Trouble in Little China"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Big"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Bill & Ted Face the Music"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Bill and Teds Excellent Adventure"
   },
   {
-    "notes": "Awesome",
-    "review": "👍",
+    "binary_rating": "👍",
+    "review": "Awesome",
     "title": "Birdman"
   },
   {
     "title": "Black Mirror Bandersnatch"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Black Panther"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Black Panther: Wakanda Forever"
   },
   {
     "title": "BlackkKlansman"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Blade Runner 2049"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Blade Runner"
   },
   {
-    "notes": "Interesting graphics/design, but otherwise not good.",
-    "review": "👎",
+    "binary_rating": "👎",
+    "review": "Interesting graphics/design, but otherwise not good.",
     "title": "Blood Machines"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Blood Simple"
   },
   {
-    "notes": "Alternated between too boring and just fucking awful violence and gore. I couldn't even finish it.",
-    "review": "👎",
+    "binary_rating": "👎",
+    "review": "Alternated between too boring and just fucking awful violence and gore. I couldn't even finish it.",
     "title": "Bone Tomahawk"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Borat Subsequent Moviefilm"
   },
   {
+    "rating": "★★★☆☆",
+    "review": "I love the Borderlands games, and I feel like this was a fairly faithful adaptation. That being said, it was not an amazing movie... but it wasn't terrible either.",
     "title": "Borderlands"
   },
   {
-    "notes": "Funded by Ethereum/ERC20 crowdsale, produced by Joe Lubin... Interesting.",
+    "review": "Funded by Ethereum/ERC20 crowdsale, produced by Joe Lubin... Interesting.",
     "title": "Braid"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Brave"
   },
   {
@@ -256,124 +258,124 @@
     "title": "Brewster's Millions"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Bullet Train"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Burn After Reading"
   },
   {
     "title": "Buster's Mal Heart"
   },
   {
-    "notes": "watch with kids",
+    "review": "watch with kids",
     "title": "Captain America: Civil War"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Captain America: The First Avenger"
   },
   {
-    "notes": "Not as funny as I thought, but shows somes the inherent fallacy of trying to raise perfrect children...",
-    "review": "👍",
+    "binary_rating": "👍",
+    "review": "Not as funny as I thought, but shows somes the inherent fallacy of trying to raise perfrect children...",
     "title": "Captain Fantastic"
   },
   {
     "title": "Captain Horatio Hornblower"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Captain Marvel"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Cars"
   },
   {
-    "notes": "Was on a Werner Herzog kick. Interesting.",
-    "review": "👎",
+    "binary_rating": "👎",
+    "review": "Was on a Werner Herzog kick. Interesting.",
     "title": "Cave of Forgotten Dreams"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Central Intelligence"
   },
   {
-    "notes": "Ugh, just too damn long. I failed to get the point. I feel like the Fed is unhelpful, but I still can't explain why.",
-    "review": "👎",
+    "binary_rating": "👎",
+    "review": "Ugh, just too damn long. I failed to get the point. I feel like the Fed is unhelpful, but I still can't explain why.",
     "title": "Century of Enslavement"
   },
   {
-    "notes": "Music by Jon Brion, who seems to be associated with several really good movies.",
+    "review": "Music by Jon Brion, who seems to be associated with several really good movies.",
     "title": "Christopher Robin (2018)"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Civil War (2024)"
   },
   {
-    "notes": "Corbin loves it.",
+    "review": "Corbin loves it.",
     "title": "Clash of the Titans"
   },
   {
     "title": "Cocaine Bear"
   },
   {
-    "notes": "It was good, but it was too... something... like a pop music song or something. It was engineered to be good and that's what makes it not amazing.",
-    "review": "👎",
+    "binary_rating": "👎",
+    "review": "It was good, but it was too... something... like a pop music song or something. It was engineered to be good and that's what makes it not amazing.",
     "title": "Coco"
   },
   {
-    "notes": "Best movie about giant monsters, alcoholism, and abusive relationships that I've ever seen.",
-    "review": "👍",
+    "binary_rating": "👍",
+    "review": "Best movie about giant monsters, alcoholism, and abusive relationships that I've ever seen.",
     "title": "Colossal"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Coming 2 America"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Coming to America"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Cops? What?"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Cowboy Bebop Remix"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Crimewave"
   },
   {
     "title": "DAFT PUNK & LEIJI MATSUMOTO'S INTERSTELLA 5555: THE 5TORY OF THE 5ECRET 5TAR 5YSTEM"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Daddy's Home"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Dead Man"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Deadpool & Wolverine"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Deadpool 2"
   },
   {
     "title": "Death at a Funeral"
   },
   {
-    "notes": "Kind of amusing, and somewhat prescient when watching it in 2022, but ultimately not an amazing movie.",
-    "review": "👎",
+    "binary_rating": "👎",
+    "review": "Kind of amusing, and somewhat prescient when watching it in 2022, but ultimately not an amazing movie.",
     "title": "Demolition Man"
   },
   {
@@ -383,90 +385,90 @@
     "title": "Despicable Me 3"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Despicable Me"
   },
   {
-    "notes": "Dumb - I need to stop watching this kinda shit.",
-    "review": "👎",
+    "binary_rating": "👎",
+    "review": "Dumb - I need to stop watching this kinda shit.",
     "title": "Divergent"
   },
   {
-    "notes": "Good, but still just a comic book movie.",
-    "review": "👎",
+    "binary_rating": "👎",
+    "review": "Good, but still just a comic book movie.",
     "title": "Doctor Strange"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Don't Look Up"
   },
   {
     "title": "Don't Worry, He Won't Get Far on Foot"
   },
   {
-    "notes": "Great",
-    "review": "👍",
+    "binary_rating": "👍",
+    "review": "Great",
     "title": "Donnie Darko"
   },
   {
-    "notes": "Ridiculous",
-    "review": "👍",
+    "binary_rating": "👍",
+    "review": "Ridiculous",
     "title": "Doomsday"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Downsizing"
   },
   {
     "title": "Dream Scenario"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Dredd"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Dumb Money"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Dumb and Dumber To"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Dune (2020)"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Dungeons & Dragons: Honor Among Thieves"
   },
   {
     "title": "E.T. the Extra Terrestrial"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Edge of Tomorrow"
   },
   {
-    "notes": "Hilarious!",
-    "review": "👍",
+    "binary_rating": "👍",
+    "review": "Hilarious!",
     "title": "Elf"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Encanto"
   },
   {
-    "notes": "Was on a Werner Herzog kick. Interesting.",
-    "review": "👎",
+    "binary_rating": "👎",
+    "review": "Was on a Werner Herzog kick. Interesting.",
     "title": "Encounters at the End of the World"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Enola Holmes 2"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Enola Holmes"
   },
   {
@@ -476,19 +478,19 @@
     "title": "Ernest Saves Christmas"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Escape from L.A."
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Escape from New York"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Eternal Sunshine of the Spotless Mind"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Everything Everywhere All at Once"
   },
   {
@@ -501,65 +503,65 @@
     "title": "Extra ordinary"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Fantastic Beasts and Where to Find Them"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Fargo"
   },
   {
     "title": "Ferris Bueller's Day Off"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Fight Club"
   },
   {
-    "notes": "Trash",
-    "review": "👎",
+    "binary_rating": "👎",
+    "review": "Trash",
     "title": "Finch"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Finding Dory"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Finding Nemo"
   },
   {
     "title": "Finding Ohana"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "FireFly"
   },
   {
-    "notes": "watch with kids",
+    "review": "watch with kids",
     "title": "First Strike"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Flash Gordon"
   },
   {
-    "notes": "I liked this movie when I was a kid, but it's really not that interesting.",
-    "review": "👎",
+    "binary_rating": "👎",
+    "review": "I liked this movie when I was a kid, but it's really not that interesting.",
     "title": "Flight of the Navigator"
   },
   {
-    "notes": "Basically just a video podcast. It's alright, but the podcasts are better.",
-    "review": "👎",
+    "binary_rating": "👎",
+    "review": "Basically just a video podcast. It's alright, but the podcasts are better.",
     "title": "Freakonomics"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Free guy"
   },
   {
-    "notes": "Decent but not good enough to recommend.",
-    "review": "👎",
+    "binary_rating": "👎",
+    "review": "Decent but not good enough to recommend.",
     "title": "Freelance"
   },
   {
@@ -572,7 +574,7 @@
     "title": "Geostorm"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Get Out"
   },
   {
@@ -582,84 +584,84 @@
     "title": "Ghost in the Shell 2.0"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Ghost in the Shell"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Ghostbusters II"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Ghostbusters"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Ghostbusters: Afterlife"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Ghostbusters: Frozen Empire"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Glass Onion"
   },
   {
     "title": "Gleaming the Cube"
   },
   {
-    "notes": "meh",
-    "review": "👎",
+    "binary_rating": "👎",
+    "review": "meh",
     "title": "Going in Style"
   },
   {
-    "notes": "Music by NIN",
+    "review": "Music by NIN",
     "title": "Gone Girl"
   },
   {
     "title": "Gremlins"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Guardians of the Galaxy Vol. 2"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Guardians of the Galaxy Vol. 3"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Guardians of the Galaxy"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Hackers"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Hail, Caesar!"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Half Baked"
   },
   {
-    "notes": "Was on a Werner Herzog kick. Interesting.",
-    "review": "👎",
+    "binary_rating": "👎",
+    "review": "Was on a Werner Herzog kick. Interesting.",
     "title": "Happy People"
   },
   {
-    "notes": "Music by Jon Brion, who seems to be associated with several really good movies.",
+    "review": "Music by Jon Brion, who seems to be associated with several really good movies.",
     "title": "Hard Eight"
   },
   {
-    "notes": "Really only worth watching because of the perspective.",
-    "review": "👍",
+    "binary_rating": "👍",
+    "review": "Really only worth watching because of the perspective.",
     "title": "Hardcore Henry"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Heathers"
   },
   {
@@ -669,190 +671,190 @@
     "title": "Hey Big Boy (Bert Kreischer)"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Hidden Figures"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Hilda the Mountain King"
   },
   {
-    "notes": "Pretty cringe by modern standards... The good parts seemed overshadowed by it.",
-    "review": "👎",
+    "binary_rating": "👎",
+    "review": "Pretty cringe by modern standards... The good parts seemed overshadowed by it.",
     "title": "History of the World: Part I"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Hocus Pocus 2"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Hocus Pocus"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Home (Dreamworks)"
   },
   {
     "title": "Honey Boy"
   },
   {
-    "notes": "This is an A&E series of movies actually.",
+    "review": "This is an A&E series of movies actually.",
     "title": "Horatio Hornblower: The Duel"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Horrible Bosses 2"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Hot Fuzz"
   },
   {
-    "notes": "Pretty funny. Watched on a plane with no sound. I should watch it again with sound. Update: borrowed it from the library, but it wasn't interesting enough to watch again.",
-    "review": "👎",
+    "binary_rating": "👎",
+    "review": "Pretty funny. Watched on a plane with no sound. I should watch it again with sound. Update: borrowed it from the library, but it wasn't interesting enough to watch again.",
     "title": "House of Wolves"
   },
   {
-    "notes": "https://en.wikipedia.org/wiki/How_It_Ends_(2021_film)",
-    "review": "👍",
+    "binary_rating": "👍",
+    "review": "https://en.wikipedia.org/wiki/How_It_Ends_(2021_film)",
     "title": "How It Ends"
   },
   {
-    "notes": "Ends rather abruptly and stupidly, but it was mostly enjoyable.",
-    "review": "👍",
+    "binary_rating": "👍",
+    "review": "Ends rather abruptly and stupidly, but it was mostly enjoyable.",
     "title": "Howl's Moving Castle"
   },
   {
     "title": "Hundreds of Beavers"
   },
   {
-    "notes": "A nice, morally-confusing movie about a robo-mom.",
-    "review": "👍",
+    "binary_rating": "👍",
+    "review": "A nice, morally-confusing movie about a robo-mom.",
     "title": "I Am Mother"
   },
   {
-    "notes": "Good, but not good enough to recommend.",
-    "review": "👎",
+    "binary_rating": "👎",
+    "review": "Good, but not good enough to recommend.",
     "title": "I Don't Feel at Home in This World Anymore."
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "I Lost My Body"
   },
   {
-    "notes": "Decent, but not good enough to recommend...",
-    "review": "👎",
+    "binary_rating": "👎",
+    "review": "Decent, but not good enough to recommend...",
     "title": "I Used to Go Here"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "I am not an Easy Man"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "I heart Huckabees"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "I'm Totally Fine"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "IT (2017)"
   },
   {
     "title": "Ice Pirates"
   },
   {
-    "notes": "Watched 10 minutes. Boring/stupid. Watched trailer. Fuck! Nope.",
-    "review": "👎",
+    "binary_rating": "👎",
+    "review": "Watched 10 minutes. Boring/stupid. Watched trailer. Fuck! Nope.",
     "title": "Ichi the Killer"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Idiocracy"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "In Time"
   },
   {
-    "notes": "Pretty good",
-    "review": "👎",
+    "binary_rating": "👎",
+    "review": "Pretty good",
     "title": "In a World"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Incredibles 2"
   },
   {
     "title": "Indiana Jones and the Dial of Destiny"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Indiana Jones and the Kingdom of the Crystal Skull"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Indiana Jones and the Last Crusade"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Indiana Jones and the Raiders of the Lost Ark"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Indiana Jones and the Temple of Doom"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Inherent Vice"
   },
   {
     "title": "Inside Llewyn Davis"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Inside Out"
   },
   {
-    "notes": "https://www.imdb.com/title/tt14544192/",
+    "review": "https://www.imdb.com/title/tt14544192/",
     "title": "Inside"
   },
   {
-    "notes": "Good",
-    "review": "👍",
+    "binary_rating": "👍",
+    "review": "Good",
     "title": "Interstellar"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Intolerable Cruelty"
   },
   {
     "title": "Iron Eagle"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Iron Man 2"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Iron Man"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Isle of Dogs"
   },
   {
-    "notes": "Don Hertzfeldt",
+    "review": "Don Hertzfeldt",
     "title": "It's Such a Beautiful Day"
   },
   {
     "title": "JUMANJI"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "JUMANJI: WELCOME TO THE JUNGLE"
   },
   {
@@ -865,209 +867,209 @@
     "title": "Jackass 3D"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Jackass Number Two"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Jackass: The Movie"
   },
   {
-    "notes": "Such a great, weird movie. I aspire to be like Rosie - she was an amazing parent.",
-    "review": "👍",
+    "binary_rating": "👍",
+    "review": "Such a great, weird movie. I aspire to be like Rosie - she was an amazing parent.",
     "title": "Jojo Rabbit"
   },
   {
-    "notes": "Pretty but dumb",
-    "review": "👎",
+    "binary_rating": "👎",
+    "review": "Pretty but dumb",
     "title": "Jupiter Ascending"
   },
   {
-    "notes": "It's a UNIX system! I know this!",
-    "review": "👍",
+    "binary_rating": "👍",
+    "review": "It's a UNIX system! I know this!",
     "title": "Jurassic Park"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Kajillionaire"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Karate Kid"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Keanu"
   },
   {
-    "notes": "Meh",
-    "review": "👎",
+    "binary_rating": "👎",
+    "review": "Meh",
     "title": "Kiki's Delivery Service"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Kill Bill volume 1"
   },
   {
-    "notes": "Not sure why I finished it. Just tropy spy weirdness.",
-    "review": "👎",
+    "binary_rating": "👎",
+    "review": "Not sure why I finished it. Just tropy spy weirdness.",
     "title": "Kingsman: The Secret Service"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Knives Out"
   },
   {
-    "notes": "Swedish movie",
+    "review": "Swedish movie",
     "title": "Kopps"
   },
   {
     "title": "Krull"
   },
   {
-    "notes": "Didn't hold up as well as I thought, especially if you're watching the dubbed version, but still pretty damn good, ha.",
-    "review": "👍",
+    "binary_rating": "👍",
+    "review": "Didn't hold up as well as I thought, especially if you're watching the dubbed version, but still pretty damn good, ha.",
     "title": "Kung Fu Hustle"
   },
   {
-    "notes": "watch with kids",
+    "review": "watch with kids",
     "title": "Kung Fu Panda"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Kung Pow! Enter the Fist"
   },
   {
     "title": "Kung fury full length"
   },
   {
-    "notes": "Music by Jon Brion, who seems to be associated with several really good movies.",
+    "review": "Music by Jon Brion, who seems to be associated with several really good movies.",
     "title": "Lady Bird (2017)"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Land of the Lost"
   },
   {
-    "notes": "Music by NIN",
+    "review": "Music by NIN",
     "title": "Lara Croft: Tomb Raider (2001)"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Lazer Team"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Lightyear"
   },
   {
-    "notes": "Good, but too many kooks and mostly depressing.",
-    "review": "👎",
+    "binary_rating": "👎",
+    "review": "Good, but too many kooks and mostly depressing.",
     "title": "Lo and Behold, Reveries of the Connected World"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Logan Lucky"
   },
   {
-    "notes": "Music by NIN",
+    "review": "Music by NIN",
     "title": "Lost Highway"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Lost in Translation"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Love and Monsters"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Luca"
   },
   {
     "title": "Lucky Number Slevin"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "M3gan"
   },
   {
-    "notes": "I was sitting here thinking whether this is good enough to borrow from the library, and I was like... nah... so, I gave it an N.",
-    "review": "👎",
+    "binary_rating": "👎",
+    "review": "I was sitting here thinking whether this is good enough to borrow from the library, and I was like... nah... so, I gave it an N.",
     "title": "Mad Max Beyond Thunderdome"
   },
   {
-    "notes": "Meh",
-    "review": "👎",
+    "binary_rating": "👎",
+    "review": "Meh",
     "title": "Mad Max Fury Road"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Madagascar"
   },
   {
-    "notes": "Music by Jon Brion, who seems to be associated with several really good movies.",
+    "review": "Music by Jon Brion, who seems to be associated with several really good movies.",
     "title": "Magnolia"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Marvel's the Avengers"
   },
   {
     "title": "Mary Poppins"
   },
   {
-    "notes": "Has the HMS Surprise!",
+    "review": "Has the HMS Surprise!",
     "title": "Master and Commander"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Matilda"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Me, You, and Everyone we Know"
   },
   {
-    "notes": "One of Beth's favorite movies.",
+    "review": "One of Beth's favorite movies.",
     "title": "Midsommer"
   },
   {
-    "notes": "Funny and stupid.",
-    "review": "👎",
+    "binary_rating": "👎",
+    "review": "Funny and stupid.",
     "title": "Mike & Dave Need Wedding Dates"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Miller's Crossing"
   },
   {
-    "notes": "Pretty awesome. Corbin loved it.",
-    "review": "👍",
+    "binary_rating": "👍",
+    "review": "Pretty awesome. Corbin loved it.",
     "title": "Milo and Otis"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Minions"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Minions: Rise of Gru"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Moana"
   },
   {
     "title": "Monkey Man"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Monty Python and The Holy Grail"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Moonfall"
   },
   {
@@ -1080,46 +1082,46 @@
     "title": "Mortal Kombat"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Movie 43"
   },
   {
-    "notes": "watch with kids",
+    "review": "watch with kids",
     "title": "Mr. Poppers Penguins"
   },
   {
     "title": "Mute"
   },
   {
-    "notes": "Excellent!",
-    "review": "👍",
+    "binary_rating": "👍",
+    "review": "Excellent!",
     "title": "My Neighbor Totoro"
   },
   {
     "title": "Nadiya's Time to Eat"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Napoleon Dynamite"
   },
   {
-    "notes": "Music by NIN",
+    "review": "Music by NIN",
     "title": "Natural Born Killers"
   },
   {
-    "notes": "Despite interesting art and world, it just didn't grab me.",
-    "review": "👎",
+    "binary_rating": "👎",
+    "review": "Despite interesting art and world, it just didn't grab me.",
     "title": "Nausicaä of the Valley of the Wind"
   },
   {
     "title": "Needle in a Timestack"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "No Country for Old Men"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Nope"
   },
   {
@@ -1127,68 +1129,68 @@
     "title": "Nothing but Trouble"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "O Brother, Where Art Thou?"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Oceans 8"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Office Space"
   },
   {
-    "notes": "Netflix. Looks weird. Kids might enjoy it?",
+    "review": "Netflix. Looks weird. Kids might enjoy it?",
     "title": "One Piece"
   },
   {
-    "notes": "As the haver of a dead dad, this was particurly rough, but good.",
-    "review": "👍",
+    "binary_rating": "👍",
+    "review": "As the haver of a dead dad, this was particurly rough, but good.",
     "title": "Onward"
   },
   {
-    "notes": "Mewing, LOL. Watch with Corbin.",
+    "review": "Mewing, LOL. Watch with Corbin.",
     "title": "Open Wide"
   },
   {
     "title": "Osmosis Jones"
   },
   {
-    "notes": "It has absurdly high ratings and was referenced in The Unbearable Weight of Massive Talent...",
+    "review": "It has absurdly high ratings and was referenced in The Unbearable Weight of Massive Talent...",
     "title": "Paddington 2"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Paddington"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Palm Springs"
   },
   {
-    "notes": "Music by Jon Brion, who seems to be associated with several really good movies.",
+    "review": "Music by Jon Brion, who seems to be associated with several really good movies.",
     "title": "ParaNorman (2012)"
   },
   {
     "title": "Parasite"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Passenger"
   },
   {
-    "notes": "Recommended by Ilya",
-    "review": "👍",
+    "binary_rating": "👍",
+    "review": "Recommended by Ilya",
     "title": "Past Lives"
   },
   {
-    "notes": "Music by NIN",
+    "review": "Music by NIN",
     "title": "Patriots Day"
   },
   {
-    "notes": "Weird reboot of Blazing Saddles for kids? It was OK, but not OK enough to recommend.",
-    "review": "👎",
+    "binary_rating": "👎",
+    "review": "Weird reboot of Blazing Saddles for kids? It was OK, but not OK enough to recommend.",
     "title": "Paws of Fury"
   },
   {
@@ -1198,38 +1200,38 @@
     "title": "Peggy Sue Got Married"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Penguins of Madagascar"
   },
   {
     "title": "Personal Shopper"
   },
   {
-    "notes": "Has the HMS Surprise!",
+    "review": "Has the HMS Surprise!",
     "title": "Pirates of the Carribean 4"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Pitch Black"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Planet Earth"
   },
   {
-    "notes": "https://m.imdb.com/title/tt0062136/",
+    "review": "https://m.imdb.com/title/tt0062136/",
     "title": "Playtime"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Please Don't Destroy: The Treasure of Foggy Mountain"
   },
   {
     "title": "Pom Poko"
   },
   {
-    "notes": "Good, but not as good as Totoro",
-    "review": "👍",
+    "binary_rating": "👍",
+    "review": "Good, but not as good as Totoro",
     "title": "Ponyo"
   },
   {
@@ -1239,39 +1241,39 @@
     "title": "Prince of Darkness 1987"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Princess Mononoke"
   },
   {
-    "notes": "watch with kids",
+    "review": "watch with kids",
     "title": "Psycho Goreman"
   },
   {
-    "notes": "Music by Jon Brion, who seems to be associated with several really good movies.",
+    "review": "Music by Jon Brion, who seems to be associated with several really good movies.",
     "title": "Punch-Drunk Love"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "R.I.P.D."
   },
   {
     "title": "RBG"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Raising Arizona"
   },
   {
-    "notes": "The Disney princesses scenes are hilarious.",
-    "review": "👍",
+    "binary_rating": "👍",
+    "review": "The Disney princesses scenes are hilarious.",
     "title": "Ralph Breaks the Internet"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Rampage"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Random Swimmer Films"
   },
   {
@@ -1281,197 +1283,197 @@
     "title": "Ratatouille"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Raya and the Last Dragon"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Ready Player One"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Real Genius"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Rebel Moon: Part One - A Child of Fire"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Rejected"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Renfield"
   },
   {
     "title": "Return to Oz"
   },
   {
-    "notes": "http://riftworldchronicles.com/",
-    "review": "👍",
+    "binary_rating": "👍",
+    "review": "http://riftworldchronicles.com/",
     "title": "Riftworld Chronicles"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Robin Hood: Men in Tights"
   },
   {
     "title": "Robocop"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Rogue One: A Star Wars Story"
   },
   {
     "title": "Ron Funches: Giggle Fit"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "SLC Punk"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Sandy Wexler"
   },
   {
-    "notes": "Couldn't even make it through this. Can't believe so many great actors had roles in this lousy movie.",
-    "review": "👎",
+    "binary_rating": "👎",
+    "review": "Couldn't even make it through this. Can't believe so many great actors had roles in this lousy movie.",
     "title": "Sausage Party"
   },
   {
-    "notes": "Generally good, but it lacked a real ending...",
-    "review": "👎",
+    "binary_rating": "👎",
+    "review": "Generally good, but it lacked a real ending...",
     "title": "Save Yourselves!"
   },
   {
-    "notes": "Cohen Bro's version",
+    "review": "Cohen Bro's version",
     "title": "Scarface"
   },
   {
     "title": "Scrooged"
   },
   {
-    "notes": "Recommended by Rick Perry.",
+    "review": "Recommended by Rick Perry.",
     "title": "Severed Ways"
   },
   {
-    "notes": "watch with kids",
+    "review": "watch with kids",
     "title": "Shaolin Soccer"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Shazam"
   },
   {
     "title": "She Hulk: Attorney at Law"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Short Circuit 2"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Short Circuit"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Shrek 2"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Shrek"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Sidekicks (1992)"
   },
   {
     "title": "Silence of the Hams"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Sin City"
   },
   {
-    "notes": "Hilarious!",
-    "review": "👍",
+    "binary_rating": "👍",
+    "review": "Hilarious!",
     "title": "Sisters"
   },
   {
     "title": "Sita Sings the Blues"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Slumberland"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Snatch"
   },
   {
-    "notes": "Meh",
-    "review": "👎",
+    "binary_rating": "👎",
+    "review": "Meh",
     "title": "Snowpiercer"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Solo: A Star Wars Story"
   },
   {
-    "notes": "Great movie!",
-    "review": "👍",
+    "binary_rating": "👍",
+    "review": "Great movie!",
     "title": "Song of the Sea"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Sonic the Hedgehog 2"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Sonic the Hedgehog"
   },
   {
     "title": "Sorry to Bother You"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Soul"
   },
   {
     "title": "Sound of music"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Southland Tales"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Space Sweepers"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Spaceballs"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Spider-Man: Across the Spider-Verse"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Spider-Man: Into the Spider-Verse"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Spirited Away"
   },
   {
-    "notes": "Bill Murray. Good.",
-    "review": "👎",
+    "binary_rating": "👎",
+    "review": "Bill Murray. Good.",
     "title": "St. Vincent"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Star Trek Beyond"
   },
   {
@@ -1484,38 +1486,38 @@
     "title": "Star Wars: Episode III – Revenge of the Sith"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Star Wars: Episode IV – A New Hope"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Star Wars: Episode V – The Empire Strikes Back"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Star Wars: Episode VI – Return of the Jedi"
   },
   {
     "title": "Star Wars: Episode VII – The Force Awakens"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Star Wars: The Last Jedi"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Star Wars: The Rise of Skywalker"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Stargate"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Step Brothers"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Strange World"
   },
   {
@@ -1525,40 +1527,40 @@
     "title": "Sukiyaki Western Django"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Super Troopers 2"
   },
   {
-    "notes": "Decent, but not good enough to recommend...",
-    "review": "👎",
+    "binary_rating": "👎",
+    "review": "Decent, but not good enough to recommend...",
     "title": "Superintelegence"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Superlopez"
   },
   {
-    "notes": "Certainly different. Got a few laughs.",
-    "review": "👎",
+    "binary_rating": "👎",
+    "review": "Certainly different. Got a few laughs.",
     "title": "Swiss Army Man"
   },
   {
     "title": "Sword in the Stone"
   },
   {
-    "notes": "Music by Jon Brion, who seems to be associated with several really good movies.",
+    "review": "Music by Jon Brion, who seems to be associated with several really good movies.",
     "title": "Synecdoche, New York (2008)"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Tag"
   },
   {
-    "notes": "watch with kids",
+    "review": "watch with kids",
     "title": "Teenage Mutant Ninja Turtles"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Teenage Mutant Ninja Turtles: Mutant Mayhem"
   },
   {
@@ -1568,44 +1570,44 @@
     "title": "Terminator movies"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Tetris"
   },
   {
     "title": "Thank You for Supporting the Arts"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "The Adam Project"
   },
   {
     "title": "The Adventures of Buckaroo Banzai Across the 8th Dimension"
   },
   {
-    "notes": "Saw vol 1. It's great. Haven't see vol 2 yet.",
+    "review": "Saw vol 1. It's great. Haven't see vol 2 yet.",
     "title": "The Animation Show (Vol. 1 & 2 Boxed Set)"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "The Art of Self-Defense"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "The Bad Guys"
   },
   {
     "title": "The Ballad of Buster Scruggs"
   },
   {
-    "notes": "A24",
+    "review": "A24",
     "title": "The Beach"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "The Big Lebowski"
   },
   {
-    "notes": "About birdwatch? Recommended by Marisol.",
+    "review": "About birdwatch? Recommended by Marisol.",
     "title": "The Big Year"
   },
   {
@@ -1618,7 +1620,7 @@
     "title": "The Christmas Chronicles 2"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "The Christmas Chronicles"
   },
   {
@@ -1628,57 +1630,57 @@
     "title": "The Chronicles of Riddick: Dark Fury"
   },
   {
-    "notes": "Enjoyed the book. Movie was the same. Whatever.",
-    "review": "👎",
+    "binary_rating": "👎",
+    "review": "Enjoyed the book. Movie was the same. Whatever.",
     "title": "The Circle"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "The City of Lost Children"
   },
   {
-    "notes": "https://www.rottentomatoes.com/m/conformist",
+    "review": "https://www.rottentomatoes.com/m/conformist",
     "title": "The Conformist"
   },
   {
     "title": "The Corsican Brothers"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "The Death of Stalin"
   },
   {
-    "notes": "Arturo recommends",
+    "review": "Arturo recommends",
     "title": "The Donut King"
   },
   {
-    "notes": "Horror but looks good? Give it a try.",
+    "review": "Horror but looks good? Give it a try.",
     "title": "The Endless"
   },
   {
     "title": "The Fall Guy (2024)"
   },
   {
-    "notes": "Recommended by Tony https://m.imdb.com/title/tt0460791/?ref_=fn_al_tt_3",
+    "review": "Recommended by Tony https://m.imdb.com/title/tt0460791/?ref_=fn_al_tt_3",
     "title": "The Fall"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "The Fifth Element"
   },
   {
     "title": "The Flight of Dragons"
   },
   {
-    "notes": "watch with kids",
+    "review": "watch with kids",
     "title": "The Forbidden Kingdom"
   },
   {
-    "notes": "https://m.imdb.com/title/tt1235170/?ref_=m_nmfmd_dr_4",
+    "review": "https://m.imdb.com/title/tt1235170/?ref_=m_nmfmd_dr_4",
     "title": "The Future"
   },
   {
-    "notes": "Music by NIN",
+    "review": "Music by NIN",
     "title": "The Girl with the Dragon Tattoo"
   },
   {
@@ -1688,50 +1690,50 @@
     "title": "The Golden Child"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "The Goonies"
   },
   {
-    "notes": "Kinda good despite racial epithets, until it turned to shit.",
-    "review": "👎",
+    "binary_rating": "👎",
+    "review": "Kinda good despite racial epithets, until it turned to shit.",
     "title": "The Hateful Eight"
   },
   {
     "title": "The Highwaymen"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "The History of Future Folk"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "The Hitman's Bodyguard"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "The Hudsucker Proxy"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "The Hunger Games: Catching Fire"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "The Hunger Games: Mockingjay, Part 1"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "The Hunger Games: Mockingjay, Part 2"
   },
   {
     "title": "The Hunger Games: The Ballad of Songbirds and Snakes"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "The Incredibles"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "The Jerk"
   },
   {
@@ -1741,7 +1743,7 @@
     "title": "The Larva Island Movie"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "The Last Dragon"
   },
   {
@@ -1754,101 +1756,101 @@
     "title": "The Lego Movie"
   },
   {
-    "notes": "Weird, but not amazing.",
-    "review": "👎",
+    "binary_rating": "👎",
+    "review": "Weird, but not amazing.",
     "title": "The Little Hours"
   },
   {
-    "notes": "Just not that big a fan of the Little Mermaid. Whatever.",
-    "review": "👎",
+    "binary_rating": "👎",
+    "review": "Just not that big a fan of the Little Mermaid. Whatever.",
     "title": "The Little Mermaid"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "The Machine"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "The Magnificent Seven"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "The Man Who Wasn't There"
   },
   {
     "title": "The Mandela Effect"
   },
   {
-    "notes": "Good",
-    "review": "👍",
+    "binary_rating": "👍",
+    "review": "Good",
     "title": "The Martian"
   },
   {
     "title": "The Ministry of Ungentlemanly Warfare"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "The Mitchells vs. the Machines"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "The Naked Man"
   },
   {
     "title": "The Neverending Story"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "The Nice Guys"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "The Phantom of the Open"
   },
   {
     "title": "The Red Turtle"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "The Samurai of Ayothaya (aka Muay Thai Warrior)"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "The Sandlot"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "The Secret Life of Pets"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "The Social Dilemma"
   },
   {
-    "notes": "Music by NIN",
+    "review": "Music by NIN",
     "title": "The Social Network"
   },
   {
-    "notes": "watch with kids",
+    "review": "watch with kids",
     "title": "The Spy Next Door"
   },
   {
     "title": "The Suicide Squad"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "The Super Mario Bros Movie (2023)"
   },
   {
     "title": "The Swedish Theory of Love"
   },
   {
-    "notes": "Stephen Hawking has had a hard, but interesting life.",
-    "review": "👍",
+    "binary_rating": "👍",
+    "review": "Stephen Hawking has had a hard, but interesting life.",
     "title": "The Theory of Everything"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "The Tomorrow War"
   },
   {
@@ -1858,65 +1860,65 @@
     "title": "The Transformers the Movie (1986)"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "The Unbearable Weight of Massive Talent"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "The Union"
   },
   {
     "title": "The VelociPastor"
   },
   {
-    "notes": "Music by NIN",
+    "review": "Music by NIN",
     "title": "The Vietnam War by Ken Burns and Lynn Novick"
   },
   {
     "title": "The Wandering Earth 2"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "The Wandering Earth"
   },
   {
     "title": "The Weather Man"
   },
   {
-    "notes": "Rhys wants to see it",
+    "review": "Rhys wants to see it",
     "title": "The Wild Robot"
   },
   {
     "title": "The Wizard of Oz"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "They Cloned Tyrone"
   },
   {
-    "notes": "Good",
-    "review": "👍",
+    "binary_rating": "👍",
+    "review": "Good",
     "title": "They Live"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "This Is A Disaster"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "This Place Rules"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Thor"
   },
   {
-    "notes": "A bunch of fighting and like 3 funny parts. Typical comic book movie.",
-    "review": "👎",
+    "binary_rating": "👎",
+    "review": "A bunch of fighting and like 3 funny parts. Typical comic book movie.",
     "title": "Thor: Ragnarok"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Three Amigos"
   },
   {
@@ -1929,101 +1931,101 @@
     "title": "Tom Segura: Ball Hog"
   },
   {
-    "notes": "watch with kids",
+    "review": "watch with kids",
     "title": "Tom and Jerry movie"
   },
   {
-    "notes": "watch with kids",
+    "review": "watch with kids",
     "title": "Tommy Boy"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Total Recall"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Toy Story 2"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Toy Story 3"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Toy Story"
   },
   {
-    "notes": "funny.",
-    "review": "👎",
+    "binary_rating": "👎",
+    "review": "funny.",
     "title": "Train Wreck"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Triangle of Sadness"
   },
   {
-    "notes": "watch with kids",
+    "review": "watch with kids",
     "title": "Tron"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "True Grit"
   },
   {
-    "notes": "Andrea wants to see it",
+    "review": "Andrea wants to see it",
     "title": "Twisters (2024)"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "UHF"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Uncharted"
   },
   {
-    "notes": "Recommended by Brian",
+    "review": "Recommended by Brian",
     "title": "Uncut gems"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Underwater"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Up"
   },
   {
     "title": "Us"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Valerian"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Vengeance"
   },
   {
     "title": "Vice Versa"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Violent Night"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "WALL-E"
   },
   {
     "title": "Wakefield"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "War Dogs"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Waterworld"
   },
   {
@@ -2039,75 +2041,75 @@
     "title": "Weird: The Al Yankovic Story"
   },
   {
-    "notes": "Hilarious",
-    "review": "👍",
+    "binary_rating": "👍",
+    "review": "Hilarious",
     "title": "What We Do in the Shadows"
   },
   {
-    "notes": "It's good to get fired up about stupid shit in our world.",
-    "review": "👍",
+    "binary_rating": "👍",
+    "review": "It's good to get fired up about stupid shit in our world.",
     "title": "What the Health?"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Where'd You Go, Bernadette"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Willow"
   },
   {
     "title": "Willy Wonka"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Willy's Wonderland"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Wine Country"
   },
   {
-    "notes": "Just total garbage. Damn shame considering the decent cast.",
-    "review": "👎",
+    "binary_rating": "👎",
+    "review": "Just total garbage. Damn shame considering the decent cast.",
     "title": "Wonder Woman 1984"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Wonder Woman"
   },
   {
-    "notes": "Don Hertzfeldt",
+    "review": "Don Hertzfeldt",
     "title": "World of Tomorrow"
   },
   {
-    "notes": "Not bad, but not amazing.",
-    "review": "👎",
+    "binary_rating": "👎",
+    "review": "Not bad, but not amazing.",
     "title": "Wreck It Ralph"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Wristcutters"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Yo Gabba Gabba Birthday Boogie"
   },
   {
-    "notes": "Better than I was expecting, but...",
-    "review": "👎",
+    "binary_rating": "👎",
+    "review": "Better than I was expecting, but...",
     "title": "Zombeavers"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Zombieland"
   },
   {
-    "review": "👎",
+    "binary_rating": "👎",
     "title": "Zombieland: Double Tap"
   },
   {
-    "review": "👍",
+    "binary_rating": "👍",
     "title": "Zoolander"
   },
   {
@@ -2120,8 +2122,8 @@
     "title": "before we vanish"
   },
   {
-    "notes": "was good when I was a kid. didn't hold up.",
-    "review": "👎",
+    "binary_rating": "👎",
+    "review": "was good when I was a kid. didn't hold up.",
     "title": "explorers"
   },
   {
@@ -2137,8 +2139,8 @@
     "title": "waiting for godot"
   },
   {
-    "notes": "Good, but not amazing.",
-    "review": "👎",
+    "binary_rating": "👎",
+    "review": "Good, but not amazing.",
     "title": "wargames"
   }
 ]
