@@ -1,5 +1,46 @@
 [
   {
+    "rating": "★★★☆☆",
+    "title": "Big Daddy"
+  },
+  {
+    "rating": "★★★☆☆",
+    "title": "Despicable Me 4"
+  },
+  {
+    "rating": "★★★★☆",
+    "title": "Deadpool & Wolverine"
+  },
+  {
+    "title": "Robot Dreams"
+  },
+  {
+    "rating": "★★☆☆☆",
+    "review": "It's like Miyazaki is parodying himself...",
+    "title": "The Boy and the Heron"
+  },
+  {
+    "rating": "★★★☆☆",
+    "title": "A Quiet Place"
+  },
+  {
+    "rating": "★★★☆☆",
+    "title": "A Quiet Place Part II"
+  },
+  {
+    "rating": "★★★☆☆",
+    "title": "A Quiet Place: Day One"
+  },
+  {
+    "rating": "★★★★☆",
+    "title": "Problemista"
+  },
+  {
+    "rating": "★★★☆☆",
+    "review": "The poor things are the men who try to possess or control the truly liberated woman, Bella. While this movie was fascinating and the cinematography was great, it was pretty uncomfortable to watch.",
+    "title": "Poor Things"
+  },
+  {
     "title": "Flow"
   },
   {
@@ -7,7 +48,7 @@
     "title": "Self Reliance"
   },
   {
-    "review": "Look at me, I am the captain now",
+    "notes": "Look at me, I am the captain now",
     "title": "Captain Phillips"
   },
   {
@@ -361,10 +402,6 @@
   {
     "binary_rating": "👍",
     "title": "Dead Man"
-  },
-  {
-    "binary_rating": "👍",
-    "title": "Deadpool & Wolverine"
   },
   {
     "binary_rating": "👍",
@@ -1058,7 +1095,7 @@
     "title": "Minions: Rise of Gru"
   },
   {
-    "binary_rating": "👎",
+    "binary_rating": "👍",
     "title": "Moana"
   },
   {
@@ -1827,7 +1864,8 @@
     "title": "The Social Dilemma"
   },
   {
-    "review": "Music by NIN",
+    "notes": "Music by NIN",
+    "rating": "★★★☆☆",
     "title": "The Social Network"
   },
   {
