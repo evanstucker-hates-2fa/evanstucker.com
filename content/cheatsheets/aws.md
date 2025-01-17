@@ -1,7 +1,6 @@
----
-title: "Amazon Web Services (AWS)"
-draft: false
----
+______________________________________________________________________
+
+## title: "Amazon Web Services (AWS)" draft: false
 
 ## Miscellaneous
 
@@ -72,4 +71,22 @@ for region in $(aws ec2 describe-regions | jq -r .Regions[].RegionName); do
     fi
   done < "${temp_dir}/snapshots-${region}.txt" | tee "${temp_dir}/delete-snapshots-${region}.sh"
 done
+```
+
+```bash
+# Less stupid way to generage kubeconfigs for AWS EKS clusters
+aws --profile $AWS_PROFILE eks update-kubeconfig --name $cluster_name --region $AWS_REGION --kubeconfig ~/.kube/$cluster_name --user-alias "${cluster_name}_${AWS_REGION}_${AWS_PROFILE}" --alias "${cluster_name}_${AWS_REGION}_${AWS_PROFILE}"
+
+```
+
+## saml2aws
+
+Don't bother using `saml2aws configure` - use this script instead: https://github.com/devopscoop/scripts/blob/add-saml2aws-script/configure_saml2aws.sh
+
+```
+# Do this once every 12 hours. Doesn't matter which role you use, they all share the same cache.
+saml2aws login
+
+# If you have some application that requires `AWS_*` env vars for some reason, you can do this:
+eval $(saml2aws script -p $AWS_PROFILE)
 ```
