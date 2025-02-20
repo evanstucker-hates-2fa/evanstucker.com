@@ -67,7 +67,7 @@ menu:
     #  name: tags
     #  url: /tags/
 
-    
+
 params:
   env: production
 
@@ -79,14 +79,10 @@ params:
 #  posts: /:year/:month/:title/
 
 socialIcons:
-  - name: "twitter"
-    url: "https://twitter.com"
-  - name: "linkedin"
-    url: "https://linkedin.com"
-  - name: "reddit"
-    url: "https://reddit.com"
-  - name: "facebook"
-    url: "https://facebook.com"
+  - name: "mastodon"
+    url: "https://indieweb.social/@evanstucker"
+  - name: "lemmy"
+    url: "https://lemmy.ml/u/evanstucker"
 
 # This doesn't seem to do anything.
 #summaryLength: 1000

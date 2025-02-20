@@ -1,4 +1,37 @@
 [
+  {"title":"Vesper"},
+  {"title":"The Artifice Girl"},
+  {"title":"Migration","rating": "★★★☆☆"},
+  {"title":"Nimona","rating": "★★★☆☆"},
+  {"title":"Entergalactic"},
+  {"title":"No Hard Feelings"},
+  {"title":"Furiosa: A Mad Max Saga"},
+  { "title": "Fly Me to the Moon" },
+  {
+    "title": "Krampus"
+  },
+  {
+    "title": "Star Trek: Section 31"
+  },
+  {
+    "title": "Twas the Night Before Spongemas"
+  },
+  {
+    "rating": "★★★☆☆",
+    "title": "Old Dads"
+  },
+  {
+    "rating": "★★★☆☆",
+    "title": "Dear Santa (the one with Jack Black)"
+  },
+  {
+    "rating": "★★★☆☆",
+    "title": "Dora and the Lost City of Gold"
+  },
+  {
+    "rating": "★★★☆☆",
+    "title": "Prospect"
+  },
   {
     "rating": "★★★☆☆",
     "title": "Big Daddy"
@@ -6,6 +39,22 @@
   {
     "rating": "★★★☆☆",
     "title": "Despicable Me 4"
+  },
+  {
+    "rating": "★★★☆☆",
+    "title": "Joker: Folie à Deux"
+  },
+  {
+    "rating": "★★★★★",
+    "title": "The Dead Don't Die"
+  },
+  {
+    "rating": "★★★★☆",
+    "title": "Captain Ron"
+  },
+  {
+    "rating": "★★★★☆",
+    "title": "Joker"
   },
   {
     "rating": "★★★★☆",
@@ -205,6 +254,7 @@
     "title": "Beavis and Butt-head Do The Universe"
   },
   {
+    "rating": "★★★☆☆",
     "title": "Beetlejuice Beetlejuice (2024)"
   },
   {
@@ -763,6 +813,7 @@
     "title": "Howl's Moving Castle"
   },
   {
+    "binary_rating": "👍",
     "title": "Hundreds of Beavers"
   },
   {
