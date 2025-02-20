@@ -1,4 +1,6 @@
-# Kubernetes (K8s)
+______________________________________________________________________
+
+## title: "Kubernetes (K8s)" draft: false
 
 ## Overview
 
@@ -268,6 +270,7 @@ kubectl rollout restart deployment/abc
 ### Copy a secret from one namespace to another
 
 ```
+# https://stackoverflow.com/a/60627332/10443350
 kubectl get secret -n origin-ns my-secret-name -ojson | jq 'del(.metadata.namespace,.metadata.resourceVersion,.metadata.uid) | .metadata.creationTimestamp=null' | kubectl apply -n destination-ns -f -
 ```
 
@@ -364,4 +367,78 @@ for pod_uid in $(echo "$pods_json" | jq -r '.items[].metadata.uid'); do
   pod_ready=$(date +%s -d $(echo "$pod_json" | jq -r '.status.conditions[] | select(.type == "Ready") | .lastTransitionTime'))
   echo -e "$(( pod_ready - pod_scheduled ))\t${ns}\t${pod}"
 done)
+```
+
+```
+# Show all pods that are running on a specific nodegroup
+export ng=your_ng_name
+k get pods -A -o wide | grep -E "($(k get nodes -l eks.amazonaws.com/nodegroup=${ng} -o name | cut -d/ -f2 | xargs | tr ' ' '|'))"
+
+# Fix deprecated and removed APIs in existing Helm releases
+# When upgrading a cluster from 1.24 to 1.25, PodSecurityPolicy was removed.
+# Later, when trying to deploy a Helm release that was updated to remove PSPs,
+# the deploy failed, because it was trying to remove the old PSPs, but the
+# cluster no longer had them. To fix this, I had to download the mapkubeapis
+# Helm plugin and run the command below. Note that some clusters may have
+# Windows-style newlines - see this issue:
+# https://github.com/helm/helm-mapkubeapis/issues/82
+# Also see https://kubernetes.io/docs/reference/using-api/deprecation-guide/
+eval $(helm ls -A -a | sed 1d | awk '{ print "helm mapkubeapis -n "$2" "$1";" }')
+
+# Show pods that have containers that that aren't ready
+# https://stackoverflow.com/a/78596733/10443350
+k get pods -A -o json | jq -r '.items[] | select(.status.containerStatuses[].ready == false) | "\(.metadata.namespace) \(.metadata.name)"' | sort -u | column -t
+
+# Combine all your kubeconfig files into ~/.kube/config
+# DANGER: This will clobber your existing ~/.kube/config file.
+export KUBECONFIG=$(find "${HOME}/.kube" -maxdepth 1 -type f ! -name config | tr "\n" ":"); kubectl config view --flatten > "${HOME}/.kube/config"; yq '.users[] |= select(.name == "oidc") |= .user += {"as":"root"}' -i ~/.kube/config; chmod 600 ~/.kube/config; unset KUBECONFIG;
+
+# Show what flux will change
+flux diff kustomization -n flux-system apps --path apps/test --recursive
+
+# Show all flux objects
+for api in $(k api-resources | grep fluxcd.io | cut -d' ' -f1); do echo -e "\n##### ${api}"; k get $api -A; done
+
+# Watch flux events
+flux events -Aw
+
+# Show all flux objects that aren't ready
+flux get all -A --status-selector ready=false
+
+# Decrypt all fields of a secret
+# https://stackoverflow.com/a/58117444/10443350
+k get secret $name -n $ns -o go-template='{{range $k,$v := .data}}{{printf "%s: " $k}}{{if not $v}}{{$v}}{{else}}{{$v | base64decode}}{{end}}{{"\n"}}{{end}}'
+
+# Show helm values for an installed release
+helm get values -n $ns $name
+
+# Get helm values for all releases in a cluster
+# Based on https://stackoverflow.com/a/67638584
+readarray -t helm_releases < <(helm ls -A -a -o json | jq -c '.[]')
+for release in "${helm_releases[@]}"; do
+  namespace=$(jq -r '.namespace' <<< "$release")
+  name=$(jq -r '.name' <<< "$release")
+  helm get values -n "${namespace}" "${name}" -o yaml > "${namespace}_${name}.helm_values.yaml"
+done
+
+# Generate a helmfile for all releases in the cluster:
+helm ls -A -a -o yaml | yq '
+  map({
+    "name": .name,
+    "namespace": .namespace,
+    "chart": (.chart | split("-") | .[0:-1] | join("-") | . + "/" + .),
+    "version": .chart | split("-")[-1],
+    "values": [.namespace + "_" + .name + ".helm_values.yaml"]
+  }) | {"releases": .}
+' | tee helmfile.yaml
+
+# Show resources in namespaces that don't have any pods (AKA find empty namespaces)
+# Requires https://github.com/luksa/kubectl-plugins
+for ns in $(k get ns -o name | cut -d / -f 2- | grep -vE '^(default|kube-node-lease|kube-public|kube-system)$'); do
+  for podless_ns in $(k get pods -n $ns |& grep "No resources found in" | awk '{ print $5 }'); do
+    echo -e "\n# $podless_ns"
+    k really get all -n $podless_ns
+  done
+done
+
 ```
