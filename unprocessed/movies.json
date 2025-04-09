@@ -1,4 +1,14 @@
 [
+  {"title":"Bāhubali 2: The Conclcusion","comments":"This is the one with the dudes with shields being catapulted - ridiculous Bollywood action crazy crap."},
+  {"title":"Bāhubali: The Beginning"},
+  {"title":"RRR"},
+  {"title":"Companion"},
+  {
+    "rating": "★★★★☆",
+    "title": "Wallace & Gromit: Vengeance Most Fowl"
+  },
+  {"title":"Perfect Day"},
+  {"title":"The Gorge"},
   {"title":"Vesper"},
   {"title":"The Artifice Girl"},
   {"title":"Migration","rating": "★★★☆☆"},
@@ -90,6 +100,7 @@
     "title": "Poor Things"
   },
   {
+    "rating": "★★★★☆",
     "title": "Flow"
   },
   {
