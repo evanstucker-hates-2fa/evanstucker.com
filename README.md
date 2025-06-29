@@ -17,6 +17,9 @@ vim "content/posts/${date}-${title}.md"
 echo 'http://localhost:1313'
 hugo server
 
+# Update theme submodules
+git submodule update --recursive --remote
+
 # Build it
 hugo
 
@@ -41,3 +44,15 @@ echo "https://ipfs.6j0.org/ipfs/${CID}"
 # Update _dnslink.evanstucker.com
 echo "dnslink=/ipfs/${CID}"
 ```
+
+## Other notes
+
+I increased the width of the Papermod theme by adding `themes/PaperMod/assets/css/extended/theme-vars.css`, with this content:
+
+```
+:root {
+    --main-width: 1000px;
+}
+```
+
+per these instructions: https://github.com/adityatelange/hugo-PaperMod/discussions/442

@@ -1,5 +1,4 @@
 [
-
   {"title":"Harry Potter and the Philosopher's Stone"},
   {"title":"Harry Potter and the Chamber of Secrets"},
   {"title":"Harry Potter and the Prisoner of Azkaban"},
@@ -8,7 +7,16 @@
   {"title":"Harry Potter and the Half-Blood Prince"},
   {"title":"Harry Potter and the Deathly Hallows: Part 1"},
   {"title":"Harry Potter and the Deathly Hallows: Part 2"},
-
+  {"title":"Bāhubali 2: The Conclcusion","comments":"This is the one with the dudes with shields being catapulted - ridiculous Bollywood action crazy crap."},
+  {"title":"Bāhubali: The Beginning"},
+  {"title":"RRR"},
+  {"title":"Companion"},
+  {
+    "rating": "★★★★☆",
+    "title": "Wallace & Gromit: Vengeance Most Fowl"
+  },
+  {"title":"Perfect Day"},
+  {"title":"The Gorge"},
   {"title":"Vesper"},
   {"title":"The Artifice Girl"},
   {"title":"Migration","rating": "★★★☆☆"},
@@ -101,6 +109,7 @@
     "title": "Poor Things"
   },
   {
+    "rating": "★★★★☆",
     "title": "Flow"
   },
   {
