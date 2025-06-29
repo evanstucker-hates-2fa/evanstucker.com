@@ -1,4 +1,13 @@
 [
+  {"title":"Man on the Inside","review": "👍"},
+  {"title":"Exploding Kittens"},
+  { "title":"Kaos"},
+  {
+    "title": "Creature Commandos"
+  },
+  {
+    "title": "Pantheon"
+  },
   {
     "rating": "★★☆☆☆",
     "title": "Yellowjackets"
@@ -19,11 +28,19 @@
   },
   {
     "review": "👎",
+    "title": "Dune: Prophecy"
+  },
+  {
+    "review": "👎",
     "title": "12 Monkeys"
   },
   {
     "notes": "Netflix series recommended by Jake",
     "title": "13th"
+  },
+  {
+    "review": "👍",
+    "title": "A.P. Bio"
   },
   {
     "review": "👍",
@@ -241,6 +258,7 @@
     "title": "Forever"
   },
   {
+    "review": "👎",
     "title": "Foundation"
   },
   {
@@ -785,6 +803,7 @@
     "title": "Unbreakable Kimmy Schmidt"
   },
   {
+    "review": "👎",
     "title": "Unstable"
   },
   {
