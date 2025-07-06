@@ -31,7 +31,7 @@
 1. Configure IPv4 DNS by going to Network, Interfaces, wan, Edit, uncheck "Use DNS servers advertised by peer", and enter custom DNS servers.
 1. Configure IPv6 DNS by going to Network, Interfaces, wan6, Edit, uncheck "Use DNS servers advertised by peer", and enter custom DNS servers.
 1. Set System, System, Hostname to "routeyronda"
-1. Set server's DHCP and DHCPv6 to static. 
+1. Set server's DHCP and DHCPv6 to static.
 1. Forward ports on firewall.
 1. Reboot the router when done.
 
@@ -55,3 +55,7 @@ https://quad9.net/doh-quad9-dns-servers/
 
 https://openwrt.org/docs/guide-user/network/ipv6/start
 Set WAN6 to /56 prefix so you can use /64s for guest and LAN interfaces
+
+## Installing more crap
+
+opkg install diffutils
