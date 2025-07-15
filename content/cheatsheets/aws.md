@@ -90,3 +90,15 @@ saml2aws login
 # If you have some application that requires `AWS_*` env vars for some reason, you can do this:
 eval $(saml2aws script -p $AWS_PROFILE)
 ```
+
+## Running a command on all AWS profiles in all regions
+
+```
+for AWS_PROFILE in $(aws configure list-profiles); do
+  export AWS_PROFILE
+  for AWS_REGION in $(aws --region us-east-1 ec2 describe-regions | jq -r .Regions[].RegionName); do
+    export AWS_REGION
+    echo "Put your command here"
+  done
+done
+```

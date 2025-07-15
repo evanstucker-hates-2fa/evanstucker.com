@@ -442,3 +442,60 @@ for ns in $(k get ns -o name | cut -d / -f 2- | grep -vE '^(default|kube-node-le
 done
 
 ```
+
+## Getting basic info about all AWS EKS clusters in all profiles in all regions
+
+```
+for AWS_PROFILE in $(aws configure list-profiles); do
+  export AWS_PROFILE
+  for AWS_REGION in $(aws --region us-east-1 ec2 describe-regions | jq -r .Regions[].RegionName); do
+    export AWS_REGION
+    for cluster in $(aws eks list-clusters --region $AWS_REGION | jq -r .clusters[]); do
+      cluster_json=$(aws eks describe-cluster --region $AWS_REGION --name $cluster)
+      name="$(echo "$cluster_json" | jq -r '.cluster.name')"
+      version="$(echo "$cluster_json" | jq -r '.cluster.version')"
+      if [[ -n "$name" ]]; then
+        # Not putting AWS_PROFILE in this output, because I want to sort/dedup, and I have several cases where I have access to both an Admin and a DevOps role, which output duplicate lines.
+        echo "${name} ${version} ${AWS_REGION}"
+      fi
+    done
+  done
+done | sort -u
+```
+
+## Configuring kubeconfig for all EKS clusters in all profiles in all regions
+
+```
+for AWS_PROFILE in $(aws configure list-profiles | grep -v '_Admin'); do
+  export AWS_PROFILE
+  for AWS_REGION in $(aws --region us-east-1 ec2 describe-regions | jq -r .Regions[].RegionName); do
+    export AWS_REGION
+    for cluster in $(aws eks list-clusters --region $AWS_REGION | jq -r .clusters[]); do
+      cluster_json=$(aws eks describe-cluster --region $AWS_REGION --name $cluster)
+      name="$(echo "$cluster_json" | jq -r '.cluster.name')"
+      version="$(echo "$cluster_json" | jq -r '.cluster.version')"
+      if [[ -n "$name" ]]; then
+        aws eks update-kubeconfig \
+          --name "$name" \
+          --profile "$AWS_PROFILE" \
+          --region "$AWS_REGION" \
+          --user-alias "${name}_${AWS_REGION}_${AWS_PROFILE}" \
+          --alias "${name}_${AWS_REGION}_${AWS_PROFILE}" \
+          --kubeconfig "${HOME}/.kube/${name}_${AWS_REGION}_${AWS_PROFILE}"
+      fi
+    done
+  done
+done
+```
+
+## Get all pods running on a nodegroup:
+
+```
+k get pods -A -o wide | grep -E "($(k get nodes -l eks.amazonaws.com/nodegroup=green -o json | jq -r '.items[].metadata.name' | xargs | tr ' ' '|'))"
+```
+
+## WTF is wrong with the cluster
+
+```
+kubectl get events -A --sort-by='.metadata.creationTimestamp' | less
+```
