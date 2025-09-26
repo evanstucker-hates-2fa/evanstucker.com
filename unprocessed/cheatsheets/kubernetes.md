@@ -390,8 +390,7 @@ eval $(helm ls -A -a | sed 1d | awk '{ print "helm mapkubeapis -n "$2" "$1";" }'
 k get pods -A -o json | jq -r '.items[] | select(.status.containerStatuses[].ready == false) | "\(.metadata.namespace) \(.metadata.name)"' | sort -u | column -t
 
 # Combine all your kubeconfig files into ~/.kube/config
-# DANGER: This will clobber your existing ~/.kube/config file.
-export KUBECONFIG=$(find "${HOME}/.kube" -maxdepth 1 -type f ! -name config | tr "\n" ":"); kubectl config view --flatten > "${HOME}/.kube/config"; yq '.users[] |= select(.name == "oidc") |= .user += {"as":"root"}' -i ~/.kube/config; chmod 600 ~/.kube/config; unset KUBECONFIG;
+cp ~/.kube/config ~/.kube/config.$(date +%s) && export KUBECONFIG=$(find "${HOME}/.kube" -maxdepth 1 -type f ! -name config ! -name 'config.*' | tr "\n" ":"); kubectl config view --flatten > ~/.kube/config; chmod 600 ~/.kube/config; unset KUBECONFIG;
 
 # Show what flux will change
 flux diff kustomization -n flux-system apps --path apps/test --recursive
