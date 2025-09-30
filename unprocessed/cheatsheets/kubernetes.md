@@ -498,3 +498,20 @@ k get pods -A -o wide | grep -E "($(k get nodes -l eks.amazonaws.com/nodegroup=g
 ```
 kubectl get events -A --sort-by='.metadata.creationTimestamp' | less
 ```
+
+## Some kind of crappy cost estimator?
+
+```
+for c in $(kubectl config get-contexts -o name); do
+  kubectl config use-context $c
+  total_cost=0
+  while read -r instances; do
+    num_instances=$(echo $instances | cut -d' ' -f1)
+    instance_type=$(echo $instances | cut -d' ' -f2)
+    monthly_cost=$(curl -sL "ec2.shop?filter=$instance_type" -H 'accept: json' | jq -r '.Prices[].MonthlyPrice')
+    #echo "$num_instances $instance_type $monthly_cost"
+    total_cost=$(printf "%.2f" $(echo "$total_cost + ( $num_instances * $monthly_cost )" | bc))
+  done < <(kubectl get nodes -o json | jq -r '.items[].metadata.labels."node.kubernetes.io/instance-type"' | sort | uniq -c | sed 's/^[ ]*//')
+  echo "\$${total_cost}"
+done
+```
