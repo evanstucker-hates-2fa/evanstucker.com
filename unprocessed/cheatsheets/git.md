@@ -212,3 +212,11 @@ git remote show [your_remote] | sed -n '/HEAD branch/s/.*: //p'
 ```
 git branch -r --merged | grep '^  origin/' | grep -Ev "(^\*|^\+|master|main|dev|release)" | xargs --no-run-if-empty git branch -d -r
 ```
+
+# Search for code in all branches
+
+https://stackoverflow.com/questions/15292391/is-it-possible-to-perform-a-grep-search-in-all-the-branches-of-a-git-project
+
+```
+git grep <regexp> $(git rev-list --all)
+```
