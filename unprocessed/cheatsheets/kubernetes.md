@@ -515,3 +515,9 @@ for c in $(kubectl config get-contexts -o name); do
   echo "\$${total_cost}"
 done
 ```
+
+## Delete all failed pods
+
+```
+k delete pods -A --field-selector=status.phase=Failed
+```

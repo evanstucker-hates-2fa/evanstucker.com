@@ -31,13 +31,13 @@ exit
 # Unsafe! Never use xargs without -0!
 prepare_test
 echo "========== xargs without -0 =========="
-find . -type f | xargs rm -v 
+find . -type f | xargs rm -v
 echo 'Press Enter'; read
 
 # Works for commands that accept multiple file arguments.
 prepare_test
 echo "========== xargs =========="
-find . -type f -print0 | xargs -0 rm -v 
+find . -type f -print0 | xargs -0 rm -v
 echo 'Press Enter'; read
 
 # Works for running a script that takes a single file argument.
@@ -56,4 +56,3 @@ find . -type f -print0 | while read -d '' file; do
     echo "<file>${file}</file>"
 done
 echo 'Press Enter'; read
-
