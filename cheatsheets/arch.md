@@ -76,3 +76,10 @@ sudo fwupdmgr refresh
 sudo fwupdmgr get-updates
 sudo fwupdmgr update
 ```
+
+# Turn on your firewall, stupid
+
+```
+sudo systemctl enable nftables.service
+sudo systemctl start nftables.service
+```

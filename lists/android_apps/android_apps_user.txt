@@ -1,0 +1,126 @@
+
+Open Source (installed and configured):
+
+package:app.alextran.immich
+package:app.comaps.fdroid
+package:at.bitfire.davdroid
+package:ch.protonmail.android
+package:com.beemdevelopment.aegis
+package:com.nextcloud.client
+package:chat.simplex.app
+package:com.android.gpstest.osmdroid
+package:com.atharok.barcodescanner
+package:com.jerboa                             # Jerboa
+package:com.x8bit.bitwarden                    # Bitwarden
+package:de.danoeh.antennapod                   # AntennaPod
+package:net.mullvad.mullvadvpn                 # Mullvad VPN
+package:org.fossify.calendar                   # Fossify Calendar
+package:at.bitfire.icsdroid
+package:at.techbee.jtx
+package:org.inaturalist.android                # iNaturalist
+package:org.inaturalist.seek                   # Seek
+package:org.thoughtcrime.securesms             # Signal
+package:ru.tech.imageresizershrinker           # Image Toolbox
+
+Open Source (not configured yet):
+
+package:co.edgesecure.app
+package:co.electriccoin.zcash
+
+Open Source (don't need right now):
+
+package:org.fdroid.fdroid                      # F-Droid
+package:org.fossify.contacts                   # Fossify Contacts
+package:org.fossify.filemanager                # Fossify File Manager
+package:org.fossify.messages                   # Fossify Messages
+
+Open Source (not installed yet):
+
+package:com.bitchat.droid                      # bitchat
+package:com.bnyro.recorder                     # Recorder (Bnyro)
+package:com.bnyro.translate                    # Translate You
+package:com.bobek.compass                      # Compass
+package:com.daniebeler.pfpixelix               # Pixelix
+package:com.geeksville.mesh                    # Meshtastic
+package:com.github.axet.audiorecorder          # Audio Recorder
+package:com.github.premnirmal.tickerwidget     # Ticker
+package:com.github.thewierdnut.endless_mobile  # Endless Sky
+package:com.joulespersecond.seattlebusbot      # OneBusAway
+package:com.pixelfed.loops                     # Loops
+package:com.pocketpalai                        # PocketPal AI
+package:com.shatteredpixel.shatteredpixeldungeon  # Shattered Pixel Dungeon
+package:com.vrem.wifianalyzer                  # WiFi Analyzer
+package:com.zaneschepke.wireguardautotunnel    # WG Tunnel
+package:de.rwth_aachen.phyphox                 # phyphox
+package:de.westnordost.streetcomplete          # StreetComplete
+package:eu.siacs.conversations                 # Conversations
+package:host.stjin.anonaddy                    # addy.io
+package:io.anuke.mindustry                     # Mindustry
+package:io.heckel.ntfy                         # ntfy
+package:io.trezor.suite                        # Trezor Suite
+package:org.a5calls.android.a5calls            # 5 Calls
+package:org.breezyweather                      # Breezy Weather
+package:org.documentfoundation.libreoffice     # LibreOffice Viewer
+package:org.framasoft.peertube                 # PeerTube
+package:org.futo.inputmethod.latin             # FUTO Keyboard
+package:org.jellyfin.mobile                    # Jellyfin
+package:org.joinmastodon.android               # Mastodon
+package:org.lichess.mobileV2                   # Lichess
+package:org.localsend.localsend_app            # LocalSend
+package:org.mozilla.firefox                    # Firefox
+package:org.proninyaroslav.libretorrent        # LibreTorrent
+package:org.stypox.dicio                       # Dicio
+package:org.telegram.messenger                 # Telegram
+package:org.torproject.android                 # Orbot
+package:org.torproject.torbrowser              # Tor Browser
+package:org.wikipedia                          # Wikipedia
+
+Closed Source (need to find alternative):
+
+package:com.android.vending # Google Play Store - using Obtainium instead!
+package:com.anthropic.claude # Using the website instead of the app...
+package:com.arlo.app # Maybe try https://frigate.video/ ?
+package:com.audible.application                     # Audible
+package:com.bandcamp.android                        # Bandcamp
+package:com.bluecrossma.bcbsma                      # Blue Cross Blue Shield of Massachusetts
+package:com.celestron.skyportal                     # Celestron SkyPortal
+package:com.connectedbits.sd311                     # Get It Done San Diego
+package:com.coulombtech                             # ChargePoint
+package:com.deepseek.chat                           # DeepSeek
+package:com.facebook.katana                         # Facebook
+package:com.facebook.orca                           # Messenger
+package:com.github.android                          # GitHub
+package:com.google.android.apps.docs                # Google Drive
+package:com.google.android.apps.docs.editors.sheets # Google Sheets
+package:com.google.android.apps.kids.familylink     # Family Link
+package:com.google.android.apps.maps                # Google Maps
+package:com.google.android.apps.youtube.music       # YouTube Music
+package:com.google.android.calendar                 # Google Calendar
+package:com.google.android.gm                       # Gmail
+package:com.google.android.gms                      # Google Play Services
+package:com.google.android.googlequicksearchbox     # Google app
+package:com.google.android.gsf                      # Google Services Framework
+package:com.google.android.markup                   # Markup
+package:com.google.android.youtube                  # YouTube
+package:com.google.ar.core                          # ARCore
+package:com.google.earth                            # Google Earth
+package:com.labs.merlinbirdid.app                   # Merlin Bird ID
+package:com.lgeha.nuts                              # LG ThinQ
+package:com.nautide.app                             # Nautide
+package:com.nextdoor                                # Nextdoor
+package:com.passportparking.mobile                  # Passport Parking
+package:com.patreon.android                         # Patreon
+package:com.privacy.pay                             # Privacy.com
+package:com.sharkninja.shark                        # SharkClean
+package:com.Slack                                   # Slack
+package:com.teslamotors.tesla                       # Tesla
+package:com.tmobile.tuesdays                        # T-Mobile Tuesdays
+package:com.tmobile.vvm.application                 # T-Mobile Visual Voicemail
+package:com.txtr.android.mmm                        # cloudLibrary
+package:com.ubercab                                 # Uber
+package:com.usaa.mobile.android.usaa                # USAA
+package:com.whatsapp                                # WhatsApp
+package:edu.cornell.birds.ebird                     # eBird
+package:net.cryptobubbles                           # Crypto Bubbles
+package:net.sailties.android                        # SailTies
+package:org.sdmts.pronto                            # Pronto (San Diego MTS)
