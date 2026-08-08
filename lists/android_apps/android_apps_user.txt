@@ -1,22 +1,22 @@
 
 Open Source (installed and configured):
 
-package:app.alextran.immich
-package:app.comaps.fdroid
-package:at.bitfire.davdroid
-package:ch.protonmail.android
-package:com.beemdevelopment.aegis
-package:com.nextcloud.client
-package:chat.simplex.app
-package:com.android.gpstest.osmdroid
-package:com.atharok.barcodescanner
+package:app.alextran.immich                    # Immich
+package:app.comaps.fdroid                      # CoMaps
+package:at.bitfire.davdroid                    # DAVx⁵
+package:ch.protonmail.android                  # Proton Mail
+package:com.beemdevelopment.aegis              # Aegis Authenticator
+package:com.nextcloud.client                   # Nextcloud
+package:chat.simplex.app                       # SimpleX Chat
+package:com.android.gpstest.osmdroid           # GPSTest
+package:com.atharok.barcodescanner             # Barcode Scanner (Atharok)
 package:com.jerboa                             # Jerboa
 package:com.x8bit.bitwarden                    # Bitwarden
 package:de.danoeh.antennapod                   # AntennaPod
 package:net.mullvad.mullvadvpn                 # Mullvad VPN
 package:org.fossify.calendar                   # Fossify Calendar
-package:at.bitfire.icsdroid
-package:at.techbee.jtx
+package:at.bitfire.icsdroid                    # ICSx⁵
+package:at.techbee.jtx                         # jtx Board
 package:org.inaturalist.android                # iNaturalist
 package:org.inaturalist.seek                   # Seek
 package:org.thoughtcrime.securesms             # Signal
@@ -24,8 +24,8 @@ package:ru.tech.imageresizershrinker           # Image Toolbox
 
 Open Source (not configured yet):
 
-package:co.edgesecure.app
-package:co.electriccoin.zcash
+package:co.edgesecure.app                      # Edge Wallet
+package:co.electriccoin.zcash                  # Zashi (Zcash wallet)
 
 Open Source (don't need right now):
 
@@ -78,8 +78,8 @@ package:org.wikipedia                          # Wikipedia
 Closed Source (need to find alternative):
 
 package:com.android.vending # Google Play Store - using Obtainium instead!
-package:com.anthropic.claude # Using the website instead of the app...
-package:com.arlo.app # Maybe try https://frigate.video/ ?
+package:com.anthropic.claude # Claude - using the website instead of the app...
+package:com.arlo.app # Arlo - maybe try https://frigate.video/ ?
 package:com.audible.application                     # Audible
 package:com.bandcamp.android                        # Bandcamp
 package:com.bluecrossma.bcbsma                      # Blue Cross Blue Shield of Massachusetts
