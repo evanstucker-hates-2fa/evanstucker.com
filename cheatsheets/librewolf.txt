@@ -1,0 +1,11 @@
+"You blah blah is damaged" WHATEVER! Bullshit. Do this to delete it from Apple's shitty quarantine:
+
+xattr -dr com.apple.quarantine /Applications/LibreWolf.app
+
+Do this to enable dark mode and local time:
+
+Open about:config, and set these:
+
+privacy.resistFingerprinting            = false
+privacy.fingerprintingProtection        = true
+privacy.fingerprintingProtection.overrides = +AllTargets,-CSSPrefersColorScheme,-JSDateTimeUTC
