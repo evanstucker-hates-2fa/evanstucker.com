@@ -27,14 +27,16 @@ a generator exists or reintroduce Hugo scaffolding unless asked.
 
 ## Lists: JSON + viewer + add script
 
-Three lists follow the same triplet pattern — `<name>.json` (data), `<name>.html` (standalone
+Two lists follow the same triplet pattern — `<name>.json` (data), `<name>.html` (standalone
 viewer), `add_<name>.js` (Node CLI appender):
 
 ```
 node lists/add_movie.js --title "Movie Name" --rating 4 --review "Great movie!"
 node lists/add_tv.js    --title "Show Name"  --rating 4 --review "👍" --notes "..."
-node lists/add_link.js  --url "https://example.com" --title "Example" --tags "a,b" --description "..."
 ```
+
+`links` used to be a third — `links.json`/`links.html`/`add_link.js` were merged into
+`lists/bookmarks.html` and deleted (Aug 2026). Bookmarks now live only in that file.
 
 Schema gotchas, easy to get wrong:
 
@@ -43,8 +45,8 @@ Schema gotchas, easy to get wrong:
 - `rating` is a **string** (`"4"`), not a number, in both movies and tv.
 - Other keys appear in the data but not in the add scripts: movies also has `comments`, `link`,
   `notes`; tv also has `imdb`.
-- `add_movie.js` skips duplicates by title; `add_tv.js` and `add_link.js` append unconditionally.
-- All three rewrite the whole file as `JSON.stringify(data, null, 2) + '\n'`. Match that
+- `add_movie.js` skips duplicates by title; `add_tv.js` appends unconditionally.
+- Both rewrite the whole file as `JSON.stringify(data, null, 2) + '\n'`. Match that
   formatting for hand edits so diffs stay small.
 - `lists/comedians.json` is *not* JSON — it's a bare list of URLs despite the extension.
 
