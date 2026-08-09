@@ -23,6 +23,7 @@ Artists
 - [Margaret L. Gonzales](https://www.bluepearlartstudio.com/) has some beautiful ocean scenes with neon colors.
 - [Marienne Chapman](https://curvyclayworks.com/) scults cool bowls, vases, and bottles shaped like sea urchins with barnicles on them.
 - [Nat Reed](https://natreed.com/) creates colorful, retro, mid-century modern scenes. They're like caricatures of Palm Springs, CA, which is where he resides.
+- [Noah Sturm](https://www.noahsturmart.com/) was at Comic-Con 2026 in San Diego - he has a bunch of awesome anime mashup art.
 - [Nobe](http://nobeart.com/) has delightful sculptures - some are whimsical, some have a really unique style, all were great.
 - [Patrick DeAngelis](https://www.patrickdeangelisart.com/) surprises me. I don't like Rothko, and DeAngelis appears to have gone done a similar path, but where Rothko fell flat, DeAngelis has creating mesmerizing fields of soft color and light.
 - [Paul Signac](https://en.wikipedia.org/wiki/Paul_Signac) - a French Neo-Impressionist painter who, working with Georges Seurat, helped develop the Pointillist style.
