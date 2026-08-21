@@ -45,3 +45,4 @@ This is specifically for my 2022 Macbook Pro with MacOS 13.4
 1. Apple, against not keeping up with standards, doesn't support OWE wifi yet...
 1. Every day, MacOS decides that I'm a light-mode motherfucker, when, in reality, I'm dark mode 24x7x365.
 1. MacOS display scaling is blurry and shitty unless you use APPLE BRAND (R) (TM) brand fucking RETINA (TM) (R) displays. Horseshit.
+1. Apple Music cannot be completely uninstalled from a Mac, but you can prevent it from launching automatically by using a third-party app called NoTunes. This app stops Apple Music from opening when you connect Bluetooth devices or press media keys.
